@@ -9,6 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    WTMGlyphStrokeTypeNone,
+    WTMGlyphStrokeTypeNorth,
+    WTMGlyphStrokeTypeNorthEast,
+    WTMGlyphStrokeTypeEast,
+    WTMGlyphStrokeTypeSouthEast,
+    WTMGlyphStrokeTypeSouth,
+    WTMGlyphStrokeTypeSouthWest,
+    WTMGlyphStrokeTypeWest,
+    WTMGlyphStrokeTypeNorthWest
+} WTMGlyphStrokeType;
 
 @interface WTMGlyphStroke : NSObject {
     
@@ -19,5 +30,12 @@
 @property (nonatomic, retain) NSMutableArray *points;
 
 - (void)addPoint:(CGPoint)point;
+- (WTMGlyphStrokeType)analyzeStroke;
+
+//+ (BOOL)isStrokeTypeNorth:(WTMGlyphStroke *)stroke;
+//+ (BOOL)isStrokeTypeNorthEast:(WTMGlyphStroke *)stroke;
+//+ (BOOL)isStrokeTypeEast:(WTMGlyphStroke *)stroke;
+//+ (BOOL)isStrokeTypeSouthEast:(WTMGlyphStroke *)stroke;
+//+ (BOOL)isStrokeTypeNorthEast:(WTMGlyphStroke *)stroke;
 
 @end

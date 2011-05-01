@@ -37,6 +37,9 @@
 
 - (void)strokeDidBegin;
 - (void)strokeDidEnd;
+- (void)strokeDidEndWithTouchUp;
+- (BOOL)isInflectionPoint:(CGPoint)point;
+- (void)analyzeStrokes;
 
 - (void)resetIfTimeout;
 - (void)reset;

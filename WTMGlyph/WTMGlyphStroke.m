@@ -13,6 +13,8 @@
 
 @synthesize points;
 
+#pragma mark - Lifecycle
+
 - (void)dealloc {
     [points release];
     
@@ -26,15 +28,24 @@
     return self;
 }
 
-- (void)addPoint:(CGPoint)point {
-    NSValue *pointValue = [NSValue valueWithCGPoint:point];
-    [self.points addObject:pointValue];
-}
-
 - (id)copyWithZone:(NSZone *)zone {
     WTMGlyphStroke *copy = [[WTMGlyphStroke alloc] init];
     copy.points = self.points;
     return copy;
 }
+
+#pragma mark - Points
+
+- (void)addPoint:(CGPoint)point {
+    NSValue *pointValue = [NSValue valueWithCGPoint:point];
+    [self.points addObject:pointValue];
+}
+
+#pragma mark - Stroke Analysis
+
+- (WTMGlyphStrokeType)analyzeStroke {
+    return WTMGlyphStrokeTypeEast;
+}
+
 
 @end

@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 extern int const WTMGlyphDefaultTimeoutSeconds;
+extern int const WTMGlyphMinInflectionPointCount;

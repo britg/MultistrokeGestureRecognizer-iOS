@@ -9,3 +9,4 @@
 #import "WTMGlyphDefaults.h"
 
 int const WTMGlyphDefaultTimeoutSeconds = 2;
+int const WTMGlyphMinInflectionPointCount = 10;
