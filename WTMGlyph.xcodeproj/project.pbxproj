@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA27804A136DAD6A00E3065A /* WTMGlyphDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */; };
+		EA6C92FA136DA457008AD709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C92F9136DA457008AD709 /* Foundation.framework */; };
+		EA6C9305136DA457008AD709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C9304136DA457008AD709 /* UIKit.framework */; };
+		EA6C9306136DA457008AD709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C92F9136DA457008AD709 /* Foundation.framework */; };
+		EA6C9308136DA457008AD709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C9307136DA457008AD709 /* CoreGraphics.framework */; };
+		EA6C930B136DA457008AD709 /* libWTMGlyph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C92F6136DA457008AD709 /* libWTMGlyph.a */; };
+		EA6C9311136DA457008AD709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA6C930F136DA457008AD709 /* InfoPlist.strings */; };
+		EA6C9314136DA457008AD709 /* WTMGlyphTests.h in Resources */ = {isa = PBXBuildFile; fileRef = EA6C9313136DA457008AD709 /* WTMGlyphTests.h */; };
+		EA6C9316136DA457008AD709 /* WTMGlyphTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9315136DA457008AD709 /* WTMGlyphTests.m */; };
+		EA6C9321136DA48E008AD709 /* WTMGlyph.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6C931F136DA48E008AD709 /* WTMGlyph.h */; };
+		EA6C9322136DA48E008AD709 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9320136DA48E008AD709 /* WTMGlyph.m */; };
+		EA6C9325136DA5CE008AD709 /* WTMGlyphDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */; };
+		EA6C9326136DA5CE008AD709 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA6C9309136DA457008AD709 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA6C92ED136DA457008AD709 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA6C92F5136DA457008AD709;
+			remoteInfo = WTMGlyph;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDelegate.h; sourceTree = "<group>"; };
+		EA6C92F6136DA457008AD709 /* libWTMGlyph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWTMGlyph.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6C92F9136DA457008AD709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA6C92FD136DA457008AD709 /* WTMGlyph-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTMGlyph-Prefix.pch"; sourceTree = "<group>"; };
+		EA6C9303136DA457008AD709 /* WTMGlyphTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTMGlyphTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA6C9304136DA457008AD709 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA6C9307136DA457008AD709 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA6C930E136DA457008AD709 /* WTMGlyphTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WTMGlyphTests-Info.plist"; sourceTree = "<group>"; };
+		EA6C9310136DA457008AD709 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA6C9312136DA457008AD709 /* WTMGlyphTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTMGlyphTests-Prefix.pch"; sourceTree = "<group>"; };
+		EA6C9313136DA457008AD709 /* WTMGlyphTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTMGlyphTests.h; sourceTree = "<group>"; };
+		EA6C9315136DA457008AD709 /* WTMGlyphTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphTests.m; sourceTree = "<group>"; };
+		EA6C931F136DA48E008AD709 /* WTMGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyph.h; sourceTree = "<group>"; };
+		EA6C9320136DA48E008AD709 /* WTMGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyph.m; sourceTree = "<group>"; };
+		EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
+		EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA6C92F3136DA457008AD709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6C92FA136DA457008AD709 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6C92FF136DA457008AD709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6C9305136DA457008AD709 /* UIKit.framework in Frameworks */,
+				EA6C9306136DA457008AD709 /* Foundation.framework in Frameworks */,
+				EA6C9308136DA457008AD709 /* CoreGraphics.framework in Frameworks */,
+				EA6C930B136DA457008AD709 /* libWTMGlyph.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA6C92EB136DA457008AD709 = {
+			isa = PBXGroup;
+			children = (
+				EA6C92FB136DA457008AD709 /* WTMGlyph */,
+				EA6C930C136DA457008AD709 /* WTMGlyphTests */,
+				EA6C92F8136DA457008AD709 /* Frameworks */,
+				EA6C92F7136DA457008AD709 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA6C92F7136DA457008AD709 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA6C92F6136DA457008AD709 /* libWTMGlyph.a */,
+				EA6C9303136DA457008AD709 /* WTMGlyphTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA6C92F8136DA457008AD709 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA6C92F9136DA457008AD709 /* Foundation.framework */,
+				EA6C9304136DA457008AD709 /* UIKit.framework */,
+				EA6C9307136DA457008AD709 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA6C92FB136DA457008AD709 /* WTMGlyph */ = {
+			isa = PBXGroup;
+			children = (
+				EA6C92FC136DA457008AD709 /* Supporting Files */,
+				EA6C931F136DA48E008AD709 /* WTMGlyph.h */,
+				EA6C9320136DA48E008AD709 /* WTMGlyph.m */,
+				EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */,
+				EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */,
+				EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */,
+			);
+			path = WTMGlyph;
+			sourceTree = "<group>";
+		};
+		EA6C92FC136DA457008AD709 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA6C92FD136DA457008AD709 /* WTMGlyph-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA6C930C136DA457008AD709 /* WTMGlyphTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA6C9313136DA457008AD709 /* WTMGlyphTests.h */,
+				EA6C9315136DA457008AD709 /* WTMGlyphTests.m */,
+				EA6C930D136DA457008AD709 /* Supporting Files */,
+			);
+			path = WTMGlyphTests;
+			sourceTree = "<group>";
+		};
+		EA6C930D136DA457008AD709 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA6C930E136DA457008AD709 /* WTMGlyphTests-Info.plist */,
+				EA6C930F136DA457008AD709 /* InfoPlist.strings */,
+				EA6C9312136DA457008AD709 /* WTMGlyphTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EA6C92F4136DA457008AD709 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6C9321136DA48E008AD709 /* WTMGlyph.h in Headers */,
+				EA6C9325136DA5CE008AD709 /* WTMGlyphDetector.h in Headers */,
+				EA27804A136DAD6A00E3065A /* WTMGlyphDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EA6C92F5136DA457008AD709 /* WTMGlyph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA6C9319136DA457008AD709 /* Build configuration list for PBXNativeTarget "WTMGlyph" */;
+			buildPhases = (
+				EA6C92F2136DA457008AD709 /* Sources */,
+				EA6C92F3136DA457008AD709 /* Frameworks */,
+				EA6C92F4136DA457008AD709 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTMGlyph;
+			productName = WTMGlyph;
+			productReference = EA6C92F6136DA457008AD709 /* libWTMGlyph.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EA6C9302136DA457008AD709 /* WTMGlyphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA6C931C136DA457008AD709 /* Build configuration list for PBXNativeTarget "WTMGlyphTests" */;
+			buildPhases = (
+				EA6C92FE136DA457008AD709 /* Sources */,
+				EA6C92FF136DA457008AD709 /* Frameworks */,
+				EA6C9300136DA457008AD709 /* Resources */,
+				EA6C9301136DA457008AD709 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA6C930A136DA457008AD709 /* PBXTargetDependency */,
+			);
+			name = WTMGlyphTests;
+			productName = WTMGlyphTests;
+			productReference = EA6C9303136DA457008AD709 /* WTMGlyphTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA6C92ED136DA457008AD709 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Warrior Thief Mage Studios";
+			};
+			buildConfigurationList = EA6C92F0136DA457008AD709 /* Build configuration list for PBXProject "WTMGlyph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EA6C92EB136DA457008AD709;
+			productRefGroup = EA6C92F7136DA457008AD709 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA6C92F5136DA457008AD709 /* WTMGlyph */,
+				EA6C9302136DA457008AD709 /* WTMGlyphTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA6C9300136DA457008AD709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6C9311136DA457008AD709 /* InfoPlist.strings in Resources */,
+				EA6C9314136DA457008AD709 /* WTMGlyphTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EA6C9301136DA457008AD709 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA6C92F2136DA457008AD709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6C9322136DA48E008AD709 /* WTMGlyph.m in Sources */,
+				EA6C9326136DA5CE008AD709 /* WTMGlyphDetector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA6C92FE136DA457008AD709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA6C9316136DA457008AD709 /* WTMGlyphTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA6C930A136DA457008AD709 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA6C92F5136DA457008AD709 /* WTMGlyph */;
+			targetProxy = EA6C9309136DA457008AD709 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA6C930F136DA457008AD709 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA6C9310136DA457008AD709 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA6C9317136DA457008AD709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA6C9318136DA457008AD709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		EA6C931A136DA457008AD709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/WTMGlyph.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTMGlyph/WTMGlyph-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EA6C931B136DA457008AD709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/WTMGlyph.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTMGlyph/WTMGlyph-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EA6C931D136DA457008AD709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTMGlyphTests/WTMGlyphTests-Prefix.pch";
+				INFOPLIST_FILE = "WTMGlyphTests/WTMGlyphTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EA6C931E136DA457008AD709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTMGlyphTests/WTMGlyphTests-Prefix.pch";
+				INFOPLIST_FILE = "WTMGlyphTests/WTMGlyphTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA6C92F0136DA457008AD709 /* Build configuration list for PBXProject "WTMGlyph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6C9317136DA457008AD709 /* Debug */,
+				EA6C9318136DA457008AD709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA6C9319136DA457008AD709 /* Build configuration list for PBXNativeTarget "WTMGlyph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6C931A136DA457008AD709 /* Debug */,
+				EA6C931B136DA457008AD709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA6C931C136DA457008AD709 /* Build configuration list for PBXNativeTarget "WTMGlyphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA6C931D136DA457008AD709 /* Debug */,
+				EA6C931E136DA457008AD709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA6C92ED136DA457008AD709 /* Project object */;
+}
