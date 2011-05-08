@@ -10,8 +10,6 @@
 		EA27804A136DAD6A00E3065A /* WTMGlyphDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */; };
 		EA278050136DB9D400E3065A /* WTMGlyphDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EA27804E136DB9D400E3065A /* WTMGlyphDefaults.h */; };
 		EA278051136DB9D400E3065A /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA27804F136DB9D400E3065A /* WTMGlyphDefaults.m */; };
-		EA27806A136DE51100E3065A /* WTMGlyphStroke.h in Headers */ = {isa = PBXBuildFile; fileRef = EA278068136DE51100E3065A /* WTMGlyphStroke.h */; };
-		EA27806B136DE51100E3065A /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = EA278069136DE51100E3065A /* WTMGlyphStroke.m */; };
 		EA6C92FA136DA457008AD709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C92F9136DA457008AD709 /* Foundation.framework */; };
 		EA6C9305136DA457008AD709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C9304136DA457008AD709 /* UIKit.framework */; };
 		EA6C9306136DA457008AD709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C92F9136DA457008AD709 /* Foundation.framework */; };
@@ -40,8 +38,7 @@
 		EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDelegate.h; sourceTree = "<group>"; };
 		EA27804E136DB9D400E3065A /* WTMGlyphDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDefaults.h; sourceTree = "<group>"; };
 		EA27804F136DB9D400E3065A /* WTMGlyphDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDefaults.m; sourceTree = "<group>"; };
-		EA278068136DE51100E3065A /* WTMGlyphStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphStroke.h; sourceTree = "<group>"; };
-		EA278069136DE51100E3065A /* WTMGlyphStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphStroke.m; sourceTree = "<group>"; };
+		EA3A7869137602AB0092E7D0 /* ndollar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ndollar.js; sourceTree = "<group>"; };
 		EA6C92F6136DA457008AD709 /* libWTMGlyph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWTMGlyph.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6C92F9136DA457008AD709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA6C92FD136DA457008AD709 /* WTMGlyph-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTMGlyph-Prefix.pch"; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 				EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */,
 				EA27804E136DB9D400E3065A /* WTMGlyphDefaults.h */,
 				EA27804F136DB9D400E3065A /* WTMGlyphDefaults.m */,
-				EA278068136DE51100E3065A /* WTMGlyphStroke.h */,
-				EA278069136DE51100E3065A /* WTMGlyphStroke.m */,
 			);
 			path = WTMGlyph;
 			sourceTree = "<group>";
@@ -131,6 +126,7 @@
 		EA6C92FC136DA457008AD709 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA3A7869137602AB0092E7D0 /* ndollar.js */,
 				EA6C92FD136DA457008AD709 /* WTMGlyph-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -167,7 +163,6 @@
 				EA6C9325136DA5CE008AD709 /* WTMGlyphDetector.h in Headers */,
 				EA27804A136DAD6A00E3065A /* WTMGlyphDelegate.h in Headers */,
 				EA278050136DB9D400E3065A /* WTMGlyphDefaults.h in Headers */,
-				EA27806A136DE51100E3065A /* WTMGlyphStroke.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +267,6 @@
 				EA6C9322136DA48E008AD709 /* WTMGlyph.m in Sources */,
 				EA6C9326136DA5CE008AD709 /* WTMGlyphDetector.m in Sources */,
 				EA278051136DB9D400E3065A /* WTMGlyphDefaults.m in Sources */,
-				EA27806B136DE51100E3065A /* WTMGlyphStroke.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

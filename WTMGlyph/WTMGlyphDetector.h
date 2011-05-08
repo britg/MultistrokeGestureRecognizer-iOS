@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "WTMGlyph.h"
 #import "WTMGlyphDelegate.h"
-#import "WTMGlyphStroke.h"
 
 
 @interface WTMGlyphDetector : NSObject {
@@ -18,8 +17,7 @@
     id<WTMGlyphDelegate> delegate;
     
     NSMutableArray *points;
-    NSMutableArray *strokes;
-    WTMGlyphStroke *activeStroke;
+    NSMutableArray *templates;
     
     NSInteger timeoutSeconds;
     NSTimeInterval lastPointTime;
@@ -27,19 +25,14 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *points;
-@property (nonatomic, retain) WTMGlyphStroke *activeStroke;
+@property (nonatomic, retain) NSMutableArray *templates;
 @property (nonatomic) NSInteger timeoutSeconds;
 
 + (id)detector;
 - (id)init;
+- (id)initWithGlyphTemplates:(NSArray *)_templates;
 
 - (void)addPoint:(CGPoint)point;
-
-- (void)strokeDidBegin;
-- (void)strokeDidEnd;
-- (void)strokeDidEndWithTouchUp;
-- (BOOL)isInflectionPoint:(CGPoint)point;
-- (void)analyzeStrokes;
 
 - (void)resetIfTimeout;
 - (void)reset;

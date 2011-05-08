@@ -10,7 +10,14 @@
 
 
 @interface WTMGlyph : NSObject {
-    
+    NSString *name;
+    NSArray *templatePoints;
 }
+
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSArray *templatePoints;
+
+- (id)init;
+- (id)initWithName:(NSString *)_name templatePoints:(NSArray *)points;
 
 @end

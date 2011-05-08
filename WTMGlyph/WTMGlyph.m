@@ -11,4 +11,22 @@
 
 @implementation WTMGlyph
 
+@synthesize name;
+@synthesize templatePoints;
+
+- (id)init {
+    if ((self = [super init])) {
+        
+    }
+    return self;
+}
+
+- (id)initWithName:(NSString *)_name templatePoints:(NSArray *)points {
+    [self init];
+    self.name = _name;
+    self.templatePoints = points;
+    
+    return self;
+}
+
 @end
