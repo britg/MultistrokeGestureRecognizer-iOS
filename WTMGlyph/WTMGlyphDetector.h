@@ -33,6 +33,10 @@
 - (id)initWithGlyphTemplates:(NSArray *)_templates;
 
 - (void)addPoint:(CGPoint)point;
+- (void)detectGlyph;
+- (NSArray *)resample:(NSArray *)_points;
+- (NSArray *)translate:(NSArray *)_points;
+- (NSArray *)vectorize:(NSArray *)_points;
 
 - (void)resetIfTimeout;
 - (void)reset;

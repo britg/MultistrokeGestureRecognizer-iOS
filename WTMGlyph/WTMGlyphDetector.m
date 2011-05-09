@@ -56,7 +56,24 @@
 }
 
 - (void)detectGlyph {
-    
+    NSArray *resampled = [self resample:self.points];
+    NSArray *translated = [self translate:resampled];
+    NSArray *vectorized = [self vectorize:translated];
+}
+
+- (NSArray *)resample:(NSArray *)_points {
+    // todo: resample!
+    return self.points;
+}
+
+- (NSArray *)translate:(NSArray *)_points {
+    // todo: translate!
+    return self.points;
+}
+
+- (NSArray *)vectorize:(NSArray *)_points {
+    // todo: vectorize!
+    return self.points;
 }
 
 #pragma mark - Utilities
