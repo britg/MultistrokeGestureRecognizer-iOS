@@ -15,14 +15,24 @@
 @synthesize strokes;
 @synthesize unistrokes;
 
+#pragma mark - Lifecycle
+
+- (void)dealloc {
+    [name release];
+    [strokes release];
+    [unistrokes release];
+    
+    [super dealloc];
+}
+
 - (id)init {
     if ((self = [super init])) {
-        
+
     }
     return self;
 }
 
-- (id)initWithName:(NSString *)_name strokes:(NSArray *)_strokes {
+- (id)initWithName:(NSString *)_name strokes:(NSMutableArray *)_strokes {
     [self init];
     self.name = _name;
     self.strokes = _strokes;
@@ -30,13 +40,31 @@
     return self;
 }
 
+#pragma mark - Initialization
+
 // Calculate all permutations of unistrokes from the points
 - (void)createUnistrokes {
+    // permute over all possible directions (heapPermute)
+    // create WTMGlyphTemplates from all unistrokes
     
 }
 
 // Do the permutations
 - (void)heapPermute {
+    
+}
+
+#pragma mark - On-the-fly creation
+
+- (void)addPoint:(CGPoint)point {
+    
+}
+
+- (void)startStroke {
+    
+}
+
+- (void)endStroke {
     
 }
 

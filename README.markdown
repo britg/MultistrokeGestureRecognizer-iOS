@@ -12,4 +12,4 @@ The Detector collects user input (an array of points) and triggers a comparison 
 
 # Creating Glyphs
 
-The Creator takes user input and converts the Strokes into Glyphs.
+A Glyph can either be defined manually by defining its Strokes and initializing a Glyph with those Strokes. Or, a newly created Glyph can be fed user input and create itself when ready.

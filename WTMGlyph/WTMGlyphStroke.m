@@ -14,6 +14,8 @@
 
 - (void)dealloc {
     [points release];
+    
+    [super dealloc];
 }
 
 - (id)initWithPoints:(NSArray *)_points {
