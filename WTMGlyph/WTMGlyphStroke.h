@@ -10,7 +10,11 @@
 
 
 @interface WTMGlyphStroke : NSObject {
-    
+    NSArray *points;
 }
+
+@property (nonatomic, retain) NSArray *points;
+
+- (id)initWithPoints:(NSArray *)_points;
 
 @end

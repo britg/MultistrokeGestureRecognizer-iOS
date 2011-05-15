@@ -11,13 +11,18 @@
 
 @interface WTMGlyph : NSObject {
     NSString *name;
-    NSArray *templatePoints;
+    NSArray *strokes;
+    NSArray *unistrokes;
 }
 
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSArray *templatePoints;
+@property (nonatomic, retain) NSArray *strokes;
+@property (nonatomic, retain) NSArray *unistrokes;
 
 - (id)init;
-- (id)initWithName:(NSString *)_name templatePoints:(NSArray *)points;
+- (id)initWithName:(NSString *)_name strokes:(NSArray *)strokes;
+
+- (void)createUnistrokes;
+- (void)heapPermute;
 
 @end
