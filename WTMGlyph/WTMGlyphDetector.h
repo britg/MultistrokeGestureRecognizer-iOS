@@ -33,6 +33,7 @@
 - (id)initWithGlyphs:(NSArray *)_glyphs;
 
 - (void)addGlyph:(WTMGlyph *)glyph;
+- (void)addDefaultGlyphs;
 - (void)removeGlyphByName:(NSString *)name;
 
 - (void)addPoint:(CGPoint)point;
@@ -41,7 +42,9 @@
 - (NSArray *)translate:(NSArray *)_points;
 - (NSArray *)vectorize:(NSArray *)_points;
 
-- (void)resetIfTimeout;
+- (void)detectIfTimedOut;
+- (void)resetIfTimedOut;
 - (void)reset;
+- (BOOL)hasTimedOut;
 
 @end

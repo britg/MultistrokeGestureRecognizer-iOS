@@ -8,6 +8,7 @@
 
 #import "WTMGlyphDetector.h"
 #import "WTMGlyphDefaults.h"
+#import "WTMGlyphT.h"
 
 
 @implementation WTMGlyphDetector
@@ -65,6 +66,10 @@
     }
 }
 
+- (void)addDefaultGlyphs {
+    [self addGlyph:[WTMGlyphT glyph]];
+}
+
 #pragma mark - Detection
 
 - (void)addPoint:(CGPoint)point {
@@ -98,9 +103,21 @@
 
 #pragma mark - Utilities
 
-- (void)resetIfTimeout {
+- (void)detectIfTimedOut {
+    if ([self hasTimedOut]) {
+        DebugLog(@"Running detection");
+        [self detectGlyph];
+    }
+}
+
+- (void)resetIfTimedOut {
+    if ([self hasTimedOut])
+        [self reset];
+}
+
+- (BOOL)hasTimedOut {
     if (points.count < 1) {
-        return;
+        return NO;
     }
     
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
@@ -108,9 +125,11 @@
     
     //DebugLog(@"Elapsed time since last point is: %i", elapsed);
     if (elapsed >= self.timeoutSeconds) {
-        DebugLog(@"Timeout detected, resetting");
-        [self reset];
+        DebugLog(@"Timeout detected");
+        return YES;
     }
+    
+    return NO;
 }
 
 - (void)reset {
