@@ -26,6 +26,8 @@
 		EA6C9322136DA48E008AD709 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9320136DA48E008AD709 /* WTMGlyph.m */; };
 		EA6C9325136DA5CE008AD709 /* WTMGlyphDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */; };
 		EA6C9326136DA5CE008AD709 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */; };
+		EABB80E813802E1D0062CB2C /* WTMGlyphT.h in Headers */ = {isa = PBXBuildFile; fileRef = EABB80E613802E1D0062CB2C /* WTMGlyphT.h */; };
+		EABB80E913802E1D0062CB2C /* WTMGlyphT.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB80E713802E1D0062CB2C /* WTMGlyphT.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		EA6C9320136DA48E008AD709 /* WTMGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyph.m; sourceTree = "<group>"; };
 		EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
 		EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
+		EABB80E613802E1D0062CB2C /* WTMGlyphT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphT.h; sourceTree = "<group>"; };
+		EABB80E713802E1D0062CB2C /* WTMGlyphT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphT.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		EA6C92FB136DA457008AD709 /* WTMGlyph */ = {
 			isa = PBXGroup;
 			children = (
+				EABB80E4138027DE0062CB2C /* Glyph Examples */,
 				EA6C92FC136DA457008AD709 /* Supporting Files */,
 				EA6C931F136DA48E008AD709 /* WTMGlyph.h */,
 				EA6C9320136DA48E008AD709 /* WTMGlyph.m */,
@@ -164,6 +169,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EABB80E4138027DE0062CB2C /* Glyph Examples */ = {
+			isa = PBXGroup;
+			children = (
+				EABB80E613802E1D0062CB2C /* WTMGlyphT.h */,
+				EABB80E713802E1D0062CB2C /* WTMGlyphT.m */,
+			);
+			name = "Glyph Examples";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -177,6 +191,7 @@
 				EA278050136DB9D400E3065A /* WTMGlyphDefaults.h in Headers */,
 				EA5836FE137F6BDF0074BB72 /* WTMGlyphStroke.h in Headers */,
 				EA583703138015020074BB72 /* WTMGlyphTemplate.h in Headers */,
+				EABB80E813802E1D0062CB2C /* WTMGlyphT.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +298,7 @@
 				EA278051136DB9D400E3065A /* WTMGlyphDefaults.m in Sources */,
 				EA5836FF137F6BDF0074BB72 /* WTMGlyphStroke.m in Sources */,
 				EA583704138015020074BB72 /* WTMGlyphTemplate.m in Sources */,
+				EABB80E913802E1D0062CB2C /* WTMGlyphT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
