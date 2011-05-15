@@ -10,3 +10,6 @@
 
 int const WTMGlyphDefaultTimeoutSeconds = 2;
 int const WTMGlyphMinInflectionPointCount = 10;
+
+int const WTMGlyphResolution = 320;
+float const WTMGlyph1DThreshold = 0.25;
