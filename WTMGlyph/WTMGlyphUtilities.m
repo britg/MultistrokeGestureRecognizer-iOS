@@ -12,7 +12,6 @@ NSArray* Resample(NSArray *points, int num) {
     NSMutableArray *workingPoints = [NSMutableArray arrayWithArray:points];
     NSMutableArray *newPoints = [NSMutableArray arrayWithObject:[points objectAtIndex:0]];
     float I = PathLength(points) / (num -1);
-    NSLog(@"Interval is %f", I);
     float D = 0.0;
     int i;
     NSValue *v1;
@@ -23,7 +22,6 @@ NSArray* Resample(NSArray *points, int num) {
     NSValue *newVal;
     
     for ( i=1; i<workingPoints.count; i++ ) {
-        NSLog(@"Working points size is %i", workingPoints.count);
         v1 = [workingPoints objectAtIndex:(i-1)];
         v2 = [workingPoints objectAtIndex:i];
         p1 = [v1 CGPointValue];
