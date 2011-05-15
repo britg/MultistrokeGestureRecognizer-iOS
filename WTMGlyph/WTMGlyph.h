@@ -13,19 +13,19 @@
 @interface WTMGlyph : NSObject {
     NSString *name;
     NSMutableArray *strokes;
-    NSMutableArray *unistrokes;
+    NSMutableArray *templates;
     
     WTMGlyphStroke *currentStroke;
 }
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *strokes;
-@property (nonatomic, retain) NSMutableArray *unistrokes;
+@property (nonatomic, retain) NSMutableArray *templates;
 
 - (id)init;
 - (id)initWithName:(NSString *)_name strokes:(NSArray *)strokes;
 
-- (void)createUnistrokes;
+- (void)createTemplates;
 - (void)heapPermute;
 
 - (void)addPoint:(CGPoint)point;

@@ -45,7 +45,7 @@
     [super dealloc];
 }
 
-#pragma mark - Templates
+#pragma mark - Glyph Templates
 
 - (void)addGlyph:(WTMGlyph *)glyph {
     if (!self.glyphs)

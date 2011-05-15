@@ -13,14 +13,14 @@
 
 @synthesize name;
 @synthesize strokes;
-@synthesize unistrokes;
+@synthesize templates;
 
 #pragma mark - Lifecycle
 
 - (void)dealloc {
     [name release];
     [strokes release];
-    [unistrokes release];
+    [templates release];
     
     [super dealloc];
 }
@@ -36,14 +36,14 @@
     [self init];
     self.name = _name;
     self.strokes = _strokes;
-    [self createUnistrokes];
+    [self createTemplates];
     return self;
 }
 
-#pragma mark - Initialization
+#pragma mark - Templates
 
 // Calculate all permutations of unistrokes from the points
-- (void)createUnistrokes {
+- (void)createTemplates {
     // permute over all possible directions (heapPermute)
     // create WTMGlyphTemplates from all unistrokes
     
