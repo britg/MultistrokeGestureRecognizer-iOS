@@ -17,7 +17,7 @@
     id<WTMGlyphDelegate> delegate;
     
     NSMutableArray *points;
-    NSMutableArray *templates;
+    NSMutableArray *glyphs;
     
     NSInteger timeoutSeconds;
     NSTimeInterval lastPointTime;
@@ -25,12 +25,15 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *points;
-@property (nonatomic, retain) NSMutableArray *templates;
+@property (nonatomic, retain) NSMutableArray *glyphs;
 @property (nonatomic) NSInteger timeoutSeconds;
 
 + (id)detector;
 - (id)init;
-- (id)initWithGlyphTemplates:(NSArray *)_templates;
+- (id)initWithGlyphs:(NSArray *)_glyphs;
+
+- (void)addGlyph:(WTMGlyph *)glyph;
+- (void)removeGlyphByName:(NSString *)name;
 
 - (void)addPoint:(CGPoint)point;
 - (void)detectGlyph;

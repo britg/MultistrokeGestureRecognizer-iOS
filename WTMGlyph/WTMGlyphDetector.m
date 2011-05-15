@@ -13,7 +13,7 @@
 @implementation WTMGlyphDetector
 
 @synthesize points;
-@synthesize templates;
+@synthesize glyphs;
 @synthesize timeoutSeconds;
 
 #pragma mark - Lifecycle
@@ -32,17 +32,37 @@
     return self;
 }
 
-- (id)initWithGlyphTemplates:(NSArray *)_templates {
+- (id)initWithGlyphs:(NSArray *)_glyphs {
     [self init];
-    self.templates = [NSMutableArray arrayWithArray:_templates];
+    self.glyphs = [NSMutableArray arrayWithArray:_glyphs];
     return self;
 }
 
 - (void)dealloc {
     [points release];
-    [templates release];
+    [glyphs release];
     
     [super dealloc];
+}
+
+#pragma mark - Templates
+
+- (void)addGlyph:(WTMGlyph *)glyph {
+    if (!self.glyphs)
+        self.glyphs = [NSMutableArray arrayWithCapacity:1];
+
+    [self.glyphs addObject:glyph];
+}
+
+- (void)removeGlyphByName:(NSString *)name {
+    NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
+    WTMGlyph *glyph;
+    
+    while ((glyph = (WTMGlyph *)[eachGlyph nextObject])) {
+        if ([glyph.name isEqualToString:name]) {
+            [self.glyphs removeObject:glyph];
+        }
+    }
 }
 
 #pragma mark - Detection
