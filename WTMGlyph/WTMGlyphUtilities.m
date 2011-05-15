@@ -51,6 +51,37 @@ NSArray* Resample(NSArray *points, int num) {
     return newPoints;
 }
 
+NSArray* Scale(NSArray *points, int resolution, float threshold) {
+    NSArray *scaled;
+    
+    return scaled;
+}
+
+CGRect BoundingBox(NSArray *points) {
+    float minX = FLT_MAX;
+    float maxX = -FLT_MAX;
+    float minY = FLT_MAX;
+    float maxY = -FLT_MAX;
+    
+    NSEnumerator *eachPoint = [points objectEnumerator];
+    NSValue *v;
+    CGPoint pt;
+    while ( (v = (NSValue *)[eachPoint nextObject]) ) {
+        pt = [v CGPointValue];
+        
+        if( pt.x < minX )
+            minX = pt.x;
+        if( pt.y < minY )
+            minY = pt.y;
+        if( pt.x > maxX )
+            maxX = pt.x;
+        if( pt.y > maxY )
+            maxY = pt.y;
+    }
+    
+    return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
+}
+
 NSMutableArray* Splice(NSMutableArray *original, id newVal, int i) {
     NSArray *frontSlice = [original subarrayWithRange:NSMakeRange(0, i)];
     int len = original.count-i;

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 NSArray* Resample(NSArray *points, int num);
+NSArray* Scale(NSArray *points, int resolution, float threshold);
+CGRect BoundingBox(NSArray *points);
 NSMutableArray* Splice(NSMutableArray *original, id newVal, int i);
 float PathLength(NSArray *points);
 float Distance(CGPoint point1, CGPoint point2);
