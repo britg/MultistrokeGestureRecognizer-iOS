@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "WTMGlyphStroke.h"
-#import <UIKit/UIKit.h>
 
 @interface WTMGlyph : NSObject {
     NSString *name;
