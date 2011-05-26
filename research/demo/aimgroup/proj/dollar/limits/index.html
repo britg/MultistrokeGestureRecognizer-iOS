@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>JavaScript $N Multistroke Recognizer Limitations</title>
+</head>
+
+<body">
+
+<!-- Title and affiliation -->
+<p><span style="font-size:22pt; font-weight:bold">$<i>N</i> Multistroke Recognizer Limitations</span><br/>
+<span style="font-size:10pt"><i>Jacob O. Wobbrock</i><sup>1</sup> and <i>Lisa Anthony</i><sup>2</sup><br />
+<sup>1</sup><i>University of Washington</i> &nbsp; and &nbsp; <sup>2</sup><i>Lockheed Martin Advanced Technology Laboratories</i></span></p>
+
+<!-- Short description -->
+<p>
+This page explains the limitations of the <a href="../ndollar.html" target="_top">$<i>N</i>
+multistroke recognizer</a>. It is important to note that all gesture recognizers have limitations. As a prototyping tool, $<i>N</i>
+strives to be succinct, easy to inspect, modify, and deploy, and capable of good recognition with little training. On the vast
+majority of simple user interface gestures, $<i>N</i> will perform very well. This page shows the few cases where $<i>N</i>
+breaks down.
+</p>
+
+
+<h2>1. Collisions possible due to resampling "through the air."</h2>
+<p>
+	When a new multistroke is defined, $<i>N</i> generates many possible ways of making that
+	multistroke. Specifically, $<i>N</i> creates a set of unistrokes for each multistroke
+	that together represent all combinations of stroke order and direction. This allows the
+	user to define a multistroke once instead of for every possible variation.
+</p>
+<p>
+	Although a powerful generalizing scheme, a drawback is that "under the hood," some
+	gestures may appear the same to $<i>N</i>, especially if the checkbox options for
+	bounded rotation invariance and/or matching only the same number of strokes are not used.
+</p>
+<img border="0" src="z.gif" /> <img border="0" src="equals.gif" />
+<p>
+	The one-stroke "z" and the two-stroke equals sign ("=") collide because when the equals
+	sign is permuted, one of its permutations is connected as shown above. The remedy for this
+	problem is to use the option for matching only the same number of strokes.
+</p>
+<img border="0" src="d.gif" /> <img border="0" src="d_ok.gif" />
+<p>
+	However, one advantage of this approach is that it allows users to make gestures with
+	fewer strokes than those with which gestures were originally defined. For example, the template
+	for "D" was created with two strokes, which, as noted above, can be made in either order and in
+	either direction owing to $<i>N</i>'s generalization scheme. Because $<i>N</i>'s strokes
+	are connected "through the air," a user who writes a "D" with one stroke, as many
+	people do, can do so and retain high accuracy.
+</p>
+
+
+<h2>2. Making more strokes than were defined and not with the same "flow."</h2>
+<p>
+	If a user makes <i>more</i> strokes for a gesture than that with which the gesture
+	was defined, the outcome can either be successful or problematic, depending on whether
+	or not the user maintains the same "flow" as the original gesture definition. By "flow,"
+	we mean maintaining the same order and directionality of the original gesture.
+</p>
+<img border="0" src="star.gif" /> <img border="0" src="star_ok.gif" /> <img border="0" src="star_bad.gif" /> <img border="0" src="star_5.gif" />
+<p>
+	For example, the "five-point star" gesture was defined with one continuous stroke. Owing to
+	$<i>N</i>'s generalization scheme, this stroke can be made in either of two directions.
+	The "flow" of the star moves in whichever direction is used to make the gesture. If a
+	candidate gesture is made with multiple strokes as shown in the middle image, the "flow"
+	must be maintained. (This gesture was recognized correctly with a score of 0.92.) However, if
+	multiple strokes are used in an order inconsistent with the flow of the original gesture,
+	the gesture will not be recognized properly. (The right drawn star
+	was recognized as "N" with a score of 0.61.) For the right drawn star to be recognized
+	properly, a template would have to be defined with five component strokes like the one shown at far right.
+	However, defining such a gesture may incur a slowdown because a 5-stroke multistroke template results in 3840
+	unistrokes. Although all of these are created, most are ignored during recognition because of an
+	angle-based optimization used by $<i>N</i>, which keeps recognition speed fast.
+</p>
+<img border="0" src="n.gif" /> <img border="0" src="n_ok.gif" />
+<p>
+	As an example of permitting this flexibility, the "N" gesture was defined with three separate strokes.
+	Thus, the right stroke was recognized correctly with a score of 0.88 despite its unconventional stroke ordering
+	and direction.
+</p>
+
+
+<h2>3. Rotating only some parts of a gesture and not others.</h2>
+<p>
+	$<i>N</i> is, by default, fully rotation-invariant, allowing gestures to be made at any orientation.
+	A checkbox option provides for bounding rotation invariance to just +/- 45 degrees, meaning
+	a gesture must be drawn more-or-less at the same angle as its template. Regardless, this all pertains
+	to the whole gesture taken as a single unit to be rotated or not. If only some parts of a gesture
+	are rotated but not others, rotation invariance cannot succeed.
+</p>
+<img border="0" src="null.gif" /> <img border="0" src="null_ok.gif" /> <img border="0" src="null_bad.gif" />
+<p>
+	The "null" gesture consists of a circle drawn from the top and diagonal slash. In the middle image,
+	the gesture has
+	been made rotated 90 degrees counterclockwise. The <i>whole</i> gesture is rotated and the
+	recognition result was successful with a score of 0.93. However, in the rightmost image, only the circle
+	has been rotated,
+	not the slash along with it (misrecognized as "N" with a score of 0.78). This "internal rotation" of some
+	gesture parts but not others results in poor recognition rates for $<i>N</i>. Upon reflection, one should
+	realize that allowing internal
+	rotation of all parts would effectively break most symbols and allow them to be extremely different than
+	they were originally drawn. (This potential only seems reasonably with "null" because of its circle's
+	rotational symmetry.)
+</p>
+
+
+<h2>4. Centroid happens to be near first point.</h2>
+<p>
+	During its operation, $<i>N</i> rotates a gesture such that the angle from its centroid (mean (x,y) point)
+	to its first point is zero degrees (i.e., horizontal from left-to-right). This works well in the vast majority
+	of cases, but becomes unreliable if the centroid happens to fall close to or on top of the gesture's
+	first point.
+</p>
+<img border="0" src="bullseye.gif" /> <img border="0" src="bullseye_ok.gif" /> <img border="0" src="bullseye_bad.gif" />
+<p>
+	A custom bullseye gesture might be defined as a circle with a dot at its center (left). Regardless of whether the
+	dot is made first or second, one of the two underlying unistroke permutations will have the dot as the
+	first point. The center drawing has the dot as the last point. It
+	was recognized properly with a score of 0.96. The right image has the center dot as the first point.
+	Because of this gesture's geometry, the centroid falls very near the first point, and
+	this causes unreliable angle calculations due to small distances, and poor recognition can result. The right
+	image was misrecognized as "D" with a socre of 0.72. Note that this problem is quite
+	rare; it is not enough to have a gesture's beginning (or ending) point
+	at its center, but it <i>also</i> must be the case that the mean (x,y) point also falls
+	very near this point. This is unlikely for most geometries, but can happen as the bullseye illustrates.
+</p>
+
+
+<h2>5. Gesture's <i>gestalt</i> is its important feature.</h2>
+<p>
+	A limitation of most, if not all, template matchers is that they do not extract higher-level features
+	over which they can generalize. This gives template matchers a benefit in terms of directness and
+	predictability, but a drawback is the inability to "reason" or "infer" higher-level gesture properties.
+</p>
+<img border="0" src="scratchout.gif" /> <img border="0" src="scratchout2.gif" /> <img border="0" src="scratchout3.gif" />
+<p>
+	A gesture for "scratching things out" or "erasing" might be defined like the one on the left. It's
+	distinguishing characteristic is its <i>gestalt</i> of a fast back-and-forth motion.
+	However, it will be matched as would any symbol, where its points will be compared to a candidate's
+	points for closeness. Thus, there's no guarantee that the middle or right gestures will be well-matched, despite
+	what humans can perceive as true similarity. As it happens, the middle gesture <i>was</i> properly
+	recognized by $<i>N</i> based on the left definition with a score of 0.85, but the right gesture was
+	misrecognized as "I" with a score of 0.77.
+</p>
+
+
+</body>
+</html>
