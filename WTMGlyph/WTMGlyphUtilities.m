@@ -91,7 +91,6 @@ NSMutableArray* Splice(NSMutableArray *original, id newVal, int i) {
     [spliced addObject:newVal];
     [spliced addObjectsFromArray:backSlice];
     
-    NSLog(@"New spliced array is %@", spliced);
     return spliced;
 }
 

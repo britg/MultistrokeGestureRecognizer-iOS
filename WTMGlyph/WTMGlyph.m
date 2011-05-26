@@ -7,7 +7,8 @@
 //
 
 #import "WTMGlyph.h"
-
+#import "WTMGlyphStroke.h"
+#import "CJSONDeserializer.h"
 
 @implementation WTMGlyph
 
@@ -40,6 +41,14 @@
     return self;
 }
 
+- (id)initWithName:(NSString *)_name JSONData:(NSData *)jsonData {
+    [self init];
+    self.name = _name;
+    self.strokes = [NSMutableArray array];
+    [self createTemplatesFromJSONData:jsonData];
+    return self;
+}
+
 #pragma mark - Templates
 
 // Calculate all permutations of unistrokes from the points
@@ -49,7 +58,26 @@
     
 }
 
-// Do the permutations
+- (void)createTemplatesFromJSONData:(NSData *)jsonData {
+    NSError *error = nil;
+	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData
+                                                                  error:&error];
+	DebugLog(@"json data %@", arr);
+    for (NSArray *strokePoints in arr) {
+        WTMGlyphStroke *stroke = [[WTMGlyphStroke alloc] init];
+		for (NSArray *pointArray in strokePoints) {
+            [stroke addPoint:CGPointMake([[pointArray objectAtIndex:0] floatValue], [[pointArray objectAtIndex:1] floatValue])];
+		}
+        DebugLog(@"Adding stroke to initial strokes %@", [stroke points]);
+        [self.strokes addObject:stroke];
+	}
+    
+    DebugLog(@"Strokes %@", self.strokes);
+	
+    [self createTemplates];
+}
+
+// Do the permutations of all the unistrokes
 - (void)heapPermute {
     
 }

@@ -23,8 +23,10 @@
 
 - (id)init;
 - (id)initWithName:(NSString *)_name strokes:(NSArray *)strokes;
+- (id)initWithName:(NSString *)_name JSONData:(NSData *)jsonData;
 
 - (void)createTemplates;
+- (void)createTemplatesFromJSONData:(NSData *)jsonData;
 - (void)heapPermute;
 
 - (void)addPoint:(CGPoint)point;

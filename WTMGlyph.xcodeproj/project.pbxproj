@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA1BA9AC138E71BF00D9A7B9 /* CDataScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA994138E71BF00D9A7B9 /* CDataScanner.h */; };
+		EA1BA9AD138E71BF00D9A7B9 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA995138E71BF00D9A7B9 /* CDataScanner.m */; };
+		EA1BA9AE138E71BF00D9A7B9 /* CFilteringJSONSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA997138E71BF00D9A7B9 /* CFilteringJSONSerializer.h */; };
+		EA1BA9AF138E71BF00D9A7B9 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA998138E71BF00D9A7B9 /* CFilteringJSONSerializer.m */; };
+		EA1BA9B0138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA999138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.h */; };
+		EA1BA9B1138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA99A138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.m */; };
+		EA1BA9B2138E71BF00D9A7B9 /* CJSONSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA99B138E71BF00D9A7B9 /* CJSONSerialization.h */; };
+		EA1BA9B3138E71BF00D9A7B9 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA99C138E71BF00D9A7B9 /* CJSONSerialization.m */; };
+		EA1BA9B4138E71BF00D9A7B9 /* CJSONSerializedData.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA99D138E71BF00D9A7B9 /* CJSONSerializedData.h */; };
+		EA1BA9B5138E71BF00D9A7B9 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA99E138E71BF00D9A7B9 /* CJSONSerializedData.m */; };
+		EA1BA9B6138E71BF00D9A7B9 /* CDataScanner_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA9A0138E71BF00D9A7B9 /* CDataScanner_Extensions.h */; };
+		EA1BA9B7138E71BF00D9A7B9 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA9A1138E71BF00D9A7B9 /* CDataScanner_Extensions.m */; };
+		EA1BA9B8138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA9A2138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.h */; };
+		EA1BA9B9138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA9A3138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.m */; };
+		EA1BA9BA138E71BF00D9A7B9 /* CJSONDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA9A5138E71BF00D9A7B9 /* CJSONDeserializer.h */; };
+		EA1BA9BB138E71BF00D9A7B9 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA9A6138E71BF00D9A7B9 /* CJSONDeserializer.m */; };
+		EA1BA9BC138E71BF00D9A7B9 /* CJSONScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA9A7138E71BF00D9A7B9 /* CJSONScanner.h */; };
+		EA1BA9BD138E71BF00D9A7B9 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA9A8138E71BF00D9A7B9 /* CJSONScanner.m */; };
+		EA1BA9BE138E71BF00D9A7B9 /* CJSONSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA9A9138E71BF00D9A7B9 /* CJSONSerializer.h */; };
+		EA1BA9BF138E71BF00D9A7B9 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1BA9AA138E71BF00D9A7B9 /* CJSONSerializer.m */; };
+		EA1BA9C0138E71BF00D9A7B9 /* JSONRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1BA9AB138E71BF00D9A7B9 /* JSONRepresentation.h */; };
 		EA27804A136DAD6A00E3065A /* WTMGlyphDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */; };
 		EA278050136DB9D400E3065A /* WTMGlyphDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EA27804E136DB9D400E3065A /* WTMGlyphDefaults.h */; };
 		EA278051136DB9D400E3065A /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA27804F136DB9D400E3065A /* WTMGlyphDefaults.m */; };
@@ -28,8 +49,6 @@
 		EA6C9322136DA48E008AD709 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9320136DA48E008AD709 /* WTMGlyph.m */; };
 		EA6C9325136DA5CE008AD709 /* WTMGlyphDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */; };
 		EA6C9326136DA5CE008AD709 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */; };
-		EABB80E813802E1D0062CB2C /* WTMGlyphT.h in Headers */ = {isa = PBXBuildFile; fileRef = EABB80E613802E1D0062CB2C /* WTMGlyphT.h */; };
-		EABB80E913802E1D0062CB2C /* WTMGlyphT.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB80E713802E1D0062CB2C /* WTMGlyphT.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +62,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA1BA994138E71BF00D9A7B9 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		EA1BA995138E71BF00D9A7B9 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		EA1BA997138E71BF00D9A7B9 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		EA1BA998138E71BF00D9A7B9 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		EA1BA999138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		EA1BA99A138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		EA1BA99B138E71BF00D9A7B9 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		EA1BA99C138E71BF00D9A7B9 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		EA1BA99D138E71BF00D9A7B9 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		EA1BA99E138E71BF00D9A7B9 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		EA1BA9A0138E71BF00D9A7B9 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		EA1BA9A1138E71BF00D9A7B9 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		EA1BA9A2138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		EA1BA9A3138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		EA1BA9A5138E71BF00D9A7B9 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		EA1BA9A6138E71BF00D9A7B9 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		EA1BA9A7138E71BF00D9A7B9 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		EA1BA9A8138E71BF00D9A7B9 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		EA1BA9A9138E71BF00D9A7B9 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		EA1BA9AA138E71BF00D9A7B9 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		EA1BA9AB138E71BF00D9A7B9 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		EA1BA9C1138E795500D9A7B9 /* t.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = t.json; sourceTree = "<group>"; };
 		EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDelegate.h; sourceTree = "<group>"; };
 		EA27804E136DB9D400E3065A /* WTMGlyphDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDefaults.h; sourceTree = "<group>"; };
 		EA27804F136DB9D400E3065A /* WTMGlyphDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDefaults.m; sourceTree = "<group>"; };
@@ -68,8 +109,6 @@
 		EA6C9320136DA48E008AD709 /* WTMGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyph.m; sourceTree = "<group>"; };
 		EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
 		EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
-		EABB80E613802E1D0062CB2C /* WTMGlyphT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphT.h; sourceTree = "<group>"; };
-		EABB80E713802E1D0062CB2C /* WTMGlyphT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphT.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +134,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA1BA993138E71AA00D9A7B9 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				EA1BA994138E71BF00D9A7B9 /* CDataScanner.h */,
+				EA1BA995138E71BF00D9A7B9 /* CDataScanner.m */,
+				EA1BA996138E71BF00D9A7B9 /* Experimental */,
+				EA1BA99F138E71BF00D9A7B9 /* Extensions */,
+				EA1BA9A4138E71BF00D9A7B9 /* JSON */,
+			);
+			name = TouchJSON;
+			sourceTree = "<group>";
+		};
+		EA1BA996138E71BF00D9A7B9 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				EA1BA997138E71BF00D9A7B9 /* CFilteringJSONSerializer.h */,
+				EA1BA998138E71BF00D9A7B9 /* CFilteringJSONSerializer.m */,
+				EA1BA999138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.h */,
+				EA1BA99A138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.m */,
+				EA1BA99B138E71BF00D9A7B9 /* CJSONSerialization.h */,
+				EA1BA99C138E71BF00D9A7B9 /* CJSONSerialization.m */,
+				EA1BA99D138E71BF00D9A7B9 /* CJSONSerializedData.h */,
+				EA1BA99E138E71BF00D9A7B9 /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		EA1BA99F138E71BF00D9A7B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA1BA9A0138E71BF00D9A7B9 /* CDataScanner_Extensions.h */,
+				EA1BA9A1138E71BF00D9A7B9 /* CDataScanner_Extensions.m */,
+				EA1BA9A2138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.h */,
+				EA1BA9A3138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA1BA9A4138E71BF00D9A7B9 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				EA1BA9A5138E71BF00D9A7B9 /* CJSONDeserializer.h */,
+				EA1BA9A6138E71BF00D9A7B9 /* CJSONDeserializer.m */,
+				EA1BA9A7138E71BF00D9A7B9 /* CJSONScanner.h */,
+				EA1BA9A8138E71BF00D9A7B9 /* CJSONScanner.m */,
+				EA1BA9A9138E71BF00D9A7B9 /* CJSONSerializer.h */,
+				EA1BA9AA138E71BF00D9A7B9 /* CJSONSerializer.m */,
+				EA1BA9AB138E71BF00D9A7B9 /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		EA6C92EB136DA457008AD709 = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +218,8 @@
 		EA6C92FB136DA457008AD709 /* WTMGlyph */ = {
 			isa = PBXGroup;
 			children = (
-				EABB80E4138027DE0062CB2C /* Glyph Examples */,
+				EA1BA993138E71AA00D9A7B9 /* TouchJSON */,
+				EABB80E4138027DE0062CB2C /* Resources */,
 				EA6C92FC136DA457008AD709 /* Supporting Files */,
 				EA6C931F136DA48E008AD709 /* WTMGlyph.h */,
 				EA6C9320136DA48E008AD709 /* WTMGlyph.m */,
@@ -175,13 +267,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EABB80E4138027DE0062CB2C /* Glyph Examples */ = {
+		EABB80E4138027DE0062CB2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EABB80E613802E1D0062CB2C /* WTMGlyphT.h */,
-				EABB80E713802E1D0062CB2C /* WTMGlyphT.m */,
+				EA1BA9C1138E795500D9A7B9 /* t.json */,
 			);
-			name = "Glyph Examples";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +288,18 @@
 				EA278050136DB9D400E3065A /* WTMGlyphDefaults.h in Headers */,
 				EA5836FE137F6BDF0074BB72 /* WTMGlyphStroke.h in Headers */,
 				EA583703138015020074BB72 /* WTMGlyphTemplate.h in Headers */,
-				EABB80E813802E1D0062CB2C /* WTMGlyphT.h in Headers */,
 				EA4860ED1380411900E40C6C /* WTMGlyphUtilities.h in Headers */,
+				EA1BA9AC138E71BF00D9A7B9 /* CDataScanner.h in Headers */,
+				EA1BA9AE138E71BF00D9A7B9 /* CFilteringJSONSerializer.h in Headers */,
+				EA1BA9B0138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.h in Headers */,
+				EA1BA9B2138E71BF00D9A7B9 /* CJSONSerialization.h in Headers */,
+				EA1BA9B4138E71BF00D9A7B9 /* CJSONSerializedData.h in Headers */,
+				EA1BA9B6138E71BF00D9A7B9 /* CDataScanner_Extensions.h in Headers */,
+				EA1BA9B8138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.h in Headers */,
+				EA1BA9BA138E71BF00D9A7B9 /* CJSONDeserializer.h in Headers */,
+				EA1BA9BC138E71BF00D9A7B9 /* CJSONScanner.h in Headers */,
+				EA1BA9BE138E71BF00D9A7B9 /* CJSONSerializer.h in Headers */,
+				EA1BA9C0138E71BF00D9A7B9 /* JSONRepresentation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +406,17 @@
 				EA278051136DB9D400E3065A /* WTMGlyphDefaults.m in Sources */,
 				EA5836FF137F6BDF0074BB72 /* WTMGlyphStroke.m in Sources */,
 				EA583704138015020074BB72 /* WTMGlyphTemplate.m in Sources */,
-				EABB80E913802E1D0062CB2C /* WTMGlyphT.m in Sources */,
 				EA4860EE1380411900E40C6C /* WTMGlyphUtilities.m in Sources */,
+				EA1BA9AD138E71BF00D9A7B9 /* CDataScanner.m in Sources */,
+				EA1BA9AF138E71BF00D9A7B9 /* CFilteringJSONSerializer.m in Sources */,
+				EA1BA9B1138E71BF00D9A7B9 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				EA1BA9B3138E71BF00D9A7B9 /* CJSONSerialization.m in Sources */,
+				EA1BA9B5138E71BF00D9A7B9 /* CJSONSerializedData.m in Sources */,
+				EA1BA9B7138E71BF00D9A7B9 /* CDataScanner_Extensions.m in Sources */,
+				EA1BA9B9138E71BF00D9A7B9 /* NSDictionary_JSONExtensions.m in Sources */,
+				EA1BA9BB138E71BF00D9A7B9 /* CJSONDeserializer.m in Sources */,
+				EA1BA9BD138E71BF00D9A7B9 /* CJSONScanner.m in Sources */,
+				EA1BA9BF138E71BF00D9A7B9 /* CJSONSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

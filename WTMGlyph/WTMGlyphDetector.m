@@ -8,7 +8,6 @@
 
 #import "WTMGlyphDetector.h"
 #import "WTMGlyphDefaults.h"
-#import "WTMGlyphT.h"
 
 
 @implementation WTMGlyphDetector
@@ -67,7 +66,10 @@
 }
 
 - (void)addDefaultGlyphs {
-    [self addGlyph:[WTMGlyphT glyph]];
+    NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"t" ofType:@"json"]];
+    DebugLog(@"JSON data from file", jsonData);
+    WTMGlyph *t = [[WTMGlyph alloc] initWithName:@"t" JSONData:jsonData];
+    [self addGlyph:t];
 }
 
 #pragma mark - Detection

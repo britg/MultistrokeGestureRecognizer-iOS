@@ -20,9 +20,16 @@
 
 - (id)initWithPoints:(NSArray *)_points {
     if ((self = [super init])) {
-        self.points = [NSArray arrayWithArray:_points];
+        self.points = [NSMutableArray arrayWithArray:_points];
     }
     return self;
+}
+
+- (void)addPoint:(CGPoint)point {
+    if (!self.points)
+        self.points = [NSMutableArray array];
+    
+    [self.points addObject:[NSValue valueWithCGPoint:point]];
 }
 
 @end
