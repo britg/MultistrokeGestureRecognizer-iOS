@@ -54,6 +54,12 @@
     [self.glyphs addObject:glyph];
 }
 
+
+- (void)addGlyphFromJSON:(NSData *)jsonData {
+    WTMGlyph *t = [[WTMGlyph alloc] initWithName:@"t" JSONData:jsonData];
+    [self addGlyph:t];
+}
+
 - (void)removeGlyphByName:(NSString *)name {
     NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
     WTMGlyph *glyph;
@@ -65,12 +71,6 @@
     }
 }
 
-- (void)addDefaultGlyphs {
-    NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"t" ofType:@"json"]];
-    DebugLog(@"JSON data from file", jsonData);
-    WTMGlyph *t = [[WTMGlyph alloc] initWithName:@"t" JSONData:jsonData];
-    [self addGlyph:t];
-}
 
 #pragma mark - Detection
 

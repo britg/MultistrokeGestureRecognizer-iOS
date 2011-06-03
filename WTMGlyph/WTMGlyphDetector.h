@@ -32,9 +32,8 @@
 - (id)initWithGlyphs:(NSArray *)_glyphs;
 
 - (void)addGlyph:(WTMGlyph *)glyph;
-- (void)loadGlyphFromJSON:(NSData *)jsonData;
+- (void)addGlyphFromJSON:(NSData *)jsonData;
 - (void)removeGlyphByName:(NSString *)name;
-- (void)addDefaultGlyphs;
 
 - (void)addPoint:(CGPoint)point;
 - (void)detectGlyph;
