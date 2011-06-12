@@ -30,7 +30,9 @@
 
 - (id)init {
     if ((self = [super init])) {
-
+        self.strokes = [NSMutableArray array];
+        strokeOrders = [NSMutableArray array];
+        permutedStrokeOrders = [NSMutableArray array];
     }
     return self;
 }
@@ -38,7 +40,6 @@
 - (id)initWithName:(NSString *)_name strokes:(NSMutableArray *)_strokes {
     [self init];
     self.name = _name;
-    self.strokes = _strokes;
     [self createTemplates];
     return self;
 }
@@ -46,8 +47,6 @@
 - (id)initWithName:(NSString *)_name JSONData:(NSData *)jsonData {
     [self init];
     self.name = _name;
-    self.strokes = [NSMutableArray array];
-    strokeOrders = [NSMutableArray array];
     [self createTemplatesFromJSONData:jsonData];
     return self;
 }
@@ -89,9 +88,8 @@
 
 // Do the permutations of all the unistrokes
 - (void)permuteStrokeOrders:(int)count {
-    permutedStrokeOrders = [NSMutableArray array];
     if (count == 1) {
-        [permutedStrokeOrders addObject:[NSArray arrayWithObject:[strokeOrders objectAtIndex:0]]];
+        [permutedStrokeOrders addObject:[strokeOrders copy]];
     } else {
         for (int i = 0; i < count; i++) {
             [self permuteStrokeOrders:(count-1)];
