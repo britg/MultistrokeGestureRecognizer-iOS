@@ -8,6 +8,7 @@
 
 #import "WTMGlyph.h"
 #import "WTMGlyphStroke.h"
+#import "WTMGlyphTemplate.h"
 #import "CJSONDeserializer.h"
 
 @implementation WTMGlyph
@@ -35,6 +36,7 @@
         strokeOrders = [NSMutableArray array];
         permutedStrokeOrders = [NSMutableArray array];
         unistrokes = [NSMutableArray array];
+        self.templates = [NSMutableArray array];
     }
     return self;
 }
@@ -66,6 +68,14 @@
     [self createUnistrokes];
     DebugLog(@"Unistrokes %@", unistrokes);
     
+    // actually create the templates from unistrokes
+    for (int i = 0; i < [unistrokes count]; i++) {
+        WTMGlyphTemplate *newTemplate = [[WTMGlyphTemplate alloc] initWithName:self.name 
+                                                                        points:[unistrokes objectAtIndex:i]];
+        [self.templates addObject:newTemplate];
+    }
+    DebugLog(@"Templates %@", self.templates);
+    DebugLog(@"Template count %i", [self.templates count]);
 }
 
 - (void)createTemplatesFromJSONData:(NSData *)jsonData {

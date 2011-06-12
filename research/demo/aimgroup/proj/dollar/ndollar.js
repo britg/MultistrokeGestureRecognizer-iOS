@@ -114,6 +114,8 @@ function Multistroke(name, useBoundedRotationInvariance, strokes) // constructor
 
 	for (var j = 0; j < unistrokes.length; j++)
 		this.Templates[j] = new Template(name, useBoundedRotationInvariance, unistrokes[j]);
+
+	console.log("Template count", this.Templates.length);
 }
 //
 // Result class
