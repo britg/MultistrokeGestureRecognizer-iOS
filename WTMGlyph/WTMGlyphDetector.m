@@ -83,9 +83,11 @@
 }
 
 - (void)detectGlyph {
-    NSArray *resampled = [self resample:self.points];
-    NSArray *translated = [self translate:resampled];
-    NSArray *vectorized = [self vectorize:translated];
+    
+    // Take the captured points and make a Template
+    // Compare the template against existing templates and find the best match.
+    // If the best match is within a threshold, consider it a true match.
+    
 }
 
 - (NSArray *)resample:(NSArray *)_points {

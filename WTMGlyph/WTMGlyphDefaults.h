@@ -12,4 +12,6 @@ extern int const WTMGlyphDefaultTimeoutSeconds;
 extern int const WTMGlyphMinInflectionPointCount;
 
 extern int const WTMGlyphResolution;
+extern int const WTMGlyphResamplePointsCount;
+
 extern float const WTMGlyph1DThreshold;

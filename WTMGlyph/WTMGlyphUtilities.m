@@ -52,7 +52,29 @@ NSArray* Resample(NSArray *points, int num) {
 }
 
 NSArray* Scale(NSArray *points, int resolution, float threshold) {
-    NSArray *scaled;
+    NSMutableArray *scaled = [NSMutableArray array];
+    
+    CGRect bb = BoundingBox(points);
+    NSLog(@"Bounding box %@", [NSValue valueWithCGRect:bb]);
+    BOOL is1D = MIN(bb.size.width / bb.size.height, bb.size.height / bb.size.width) <= threshold;
+    
+    for (int i = 0; i < [points count]; i++) {
+        NSValue *v = [points objectAtIndex:i];
+        CGPoint p = [v CGPointValue];
+        float qx;
+        float qy;
+        float scale;
+        
+        if (is1D) {    
+            scale = (resolution / MAX(bb.size.width, bb.size.height));
+            qx = p.x * scale;
+            qy = p.y * scale; 
+        } else {
+            qx = p.x * (resolution / bb.size.width);
+            qy = p.y * (resolution / bb.size.height);
+        }
+        [scaled addObject:[NSValue valueWithCGPoint:CGPointMake(qx, qy)]];
+    }
     
     return scaled;
 }
@@ -78,6 +100,9 @@ CGRect BoundingBox(NSArray *points) {
         if( pt.y > maxY )
             maxY = pt.y;
     }
+    
+    NSLog(@"minX %f", minX);
+    NSLog(@"minY %f", minY);
     
     return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
 }
@@ -119,3 +144,31 @@ float Distance(CGPoint point1, CGPoint point2) {
     float dist = sqrt( dX * dX + dY * dY );
     return dist;
 }
+
+CGPoint Centroid(NSArray *points) {
+    float x = 0.0;
+    float y = 0.0;
+    
+    for (int i = 0; i < [points count]; i++) {
+        NSValue *pointValue = [points objectAtIndex:i];
+        CGPoint point = [pointValue CGPointValue];
+        x += point.x;
+        y += point.y;
+    }
+    
+    x /= [points count];
+    y /= [points count];
+    
+    return CGPointMake(x, y);
+}
+
+// Potential for error here: NDollar uses double!
+float IndicativeAngle(NSArray *points) {
+    CGPoint centroid = Centroid(points);
+    CGPoint firstPoint = [[points objectAtIndex:0] CGPointValue];
+    float x = (centroid.x - firstPoint.x);
+    float y = (centroid.y - firstPoint.y);
+    
+    return atan2f(y, x);
+}
+
