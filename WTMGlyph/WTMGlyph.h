@@ -14,6 +14,7 @@
     NSMutableArray *strokes;
     NSMutableArray *strokeOrders;
     NSMutableArray *permutedStrokeOrders;
+    NSMutableArray *unistrokes;
     NSMutableArray *templates;
     
     WTMGlyphStroke *currentStroke;
@@ -30,6 +31,7 @@
 - (void)createTemplates;
 - (void)createTemplatesFromJSONData:(NSData *)jsonData;
 - (void)permuteStrokeOrders:(int)count;
+- (void)createUnistrokes;
 
 - (void)addPoint:(CGPoint)point;
 - (void)startStroke;

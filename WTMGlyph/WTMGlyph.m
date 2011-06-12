@@ -23,6 +23,7 @@
     [strokes release];
     [strokeOrders release];
     [permutedStrokeOrders release];
+    [unistrokes release];
     [templates release];
     
     [super dealloc];
@@ -33,6 +34,7 @@
         self.strokes = [NSMutableArray array];
         strokeOrders = [NSMutableArray array];
         permutedStrokeOrders = [NSMutableArray array];
+        unistrokes = [NSMutableArray array];
     }
     return self;
 }
@@ -55,11 +57,14 @@
 
 // Calculate all permutations of unistrokes from the points
 - (void)createTemplates {
+    
     // permute over all possible directions (heapPermute)
     [self permuteStrokeOrders:[strokeOrders count]];
-    
     DebugLog(@"Permuted stroke orders %@", permutedStrokeOrders);
+    
     // create WTMGlyphTemplates from all unistrokes
+    [self createUnistrokes];
+    DebugLog(@"Unistrokes %@", unistrokes);
     
 }
 
@@ -86,7 +91,6 @@
     [self createTemplates];
 }
 
-// Do the permutations of all the unistrokes
 - (void)permuteStrokeOrders:(int)count {
     if (count == 1) {
         [permutedStrokeOrders addObject:[strokeOrders copy]];
@@ -104,6 +108,45 @@
                 [strokeOrders replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:last]];
                 [strokeOrders replaceObjectAtIndex:(count-1) withObject:[NSNumber numberWithInt:next]];
             }
+        }
+    }
+}
+
+// Create a unistroke for each stroke order permutation
+- (void)createUnistrokes {
+    NSArray *points;
+    NSMutableArray *unistroke;
+    NSMutableArray *strokeOrder;
+    WTMGlyphStroke *stroke;
+    NSMutableArray *copyOfStrokePoints;
+    
+    for (int r = 0; r < [permutedStrokeOrders count]; r++) {
+        
+        strokeOrder = [permutedStrokeOrders objectAtIndex:r];
+        
+        for (int b = 0; b < pow(2, [strokeOrder count]); b++) {
+            
+            unistroke = [NSMutableArray array];
+            
+            for (int i = 0; i < [strokeOrders count]; i++) {
+                
+                int strokeIndex = [[strokeOrder objectAtIndex:i] intValue];
+                stroke = [self.strokes objectAtIndex:strokeIndex];
+                copyOfStrokePoints = [NSMutableArray arrayWithArray:[[stroke points] copy]];
+                
+                if (((b >> i) & 1) == 1) {
+                    points = [[copyOfStrokePoints reverseObjectEnumerator] allObjects];
+                } else {
+                    points = copyOfStrokePoints;
+                }
+                
+                for (int p = 0; p < [points count]; p++) {
+                    [unistroke addObject:[points objectAtIndex:p]];
+                }
+                
+            }
+            
+            [unistrokes addObject:unistroke];
         }
     }
 }

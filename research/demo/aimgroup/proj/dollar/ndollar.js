@@ -110,7 +110,7 @@ function Multistroke(name, useBoundedRotationInvariance, strokes) // constructor
 	this.Templates = new Array(); // unistrokes for this multistroke
 	var unistrokes = MakeUnistrokes(strokes, orders); // returns array of point arrays
 
-	//console.log("Unistrokes created for all permutations", unistrokes);
+	console.log("Unistrokes created for all permutations", unistrokes);
 
 	for (var j = 0; j < unistrokes.length; j++)
 		this.Templates[j] = new Template(name, useBoundedRotationInvariance, unistrokes[j]);
