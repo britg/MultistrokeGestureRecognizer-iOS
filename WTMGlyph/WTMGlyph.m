@@ -21,6 +21,8 @@
 - (void)dealloc {
     [name release];
     [strokes release];
+    [strokeOrders release];
+    [permutedStrokeOrders release];
     [templates release];
     
     [super dealloc];
@@ -45,6 +47,7 @@
     [self init];
     self.name = _name;
     self.strokes = [NSMutableArray array];
+    strokeOrders = [NSMutableArray array];
     [self createTemplatesFromJSONData:jsonData];
     return self;
 }
@@ -54,6 +57,9 @@
 // Calculate all permutations of unistrokes from the points
 - (void)createTemplates {
     // permute over all possible directions (heapPermute)
+    [self permuteStrokeOrders:[strokeOrders count]];
+    
+    DebugLog(@"Permuted stroke orders %@", permutedStrokeOrders);
     // create WTMGlyphTemplates from all unistrokes
     
 }
@@ -63,6 +69,7 @@
 	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData
                                                                   error:&error];
 	DebugLog(@"json data %@", arr);
+    int i = 0;
     for (NSArray *strokePoints in arr) {
         WTMGlyphStroke *stroke = [[WTMGlyphStroke alloc] init];
 		for (NSArray *pointArray in strokePoints) {
@@ -70,16 +77,37 @@
 		}
         DebugLog(@"Adding stroke to initial strokes %@", [stroke points]);
         [self.strokes addObject:stroke];
+        [strokeOrders addObject:[NSNumber numberWithInt:i]];
+        i++;
 	}
     
     DebugLog(@"Strokes %@", self.strokes);
+    DebugLog(@"Initial stroke orders %@", strokeOrders);
 	
     [self createTemplates];
 }
 
 // Do the permutations of all the unistrokes
-- (void)heapPermute {
-    
+- (void)permuteStrokeOrders:(int)count {
+    permutedStrokeOrders = [NSMutableArray array];
+    if (count == 1) {
+        [permutedStrokeOrders addObject:[NSArray arrayWithObject:[strokeOrders objectAtIndex:0]]];
+    } else {
+        for (int i = 0; i < count; i++) {
+            [self permuteStrokeOrders:(count-1)];
+            
+            int last = [[strokeOrders objectAtIndex:(count - 1)] intValue];
+            if (count % 2 == 1) {
+                int first = [[strokeOrders objectAtIndex:0] intValue];
+                [strokeOrders replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:last]];
+                [strokeOrders replaceObjectAtIndex:(count-1) withObject:[NSNumber numberWithInt:first]];
+            } else {   
+                int next = [[strokeOrders objectAtIndex:i] intValue];
+                [strokeOrders replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:last]];
+                [strokeOrders replaceObjectAtIndex:(count-1) withObject:[NSNumber numberWithInt:next]];
+            }
+        }
+    }
 }
 
 #pragma mark - On-the-fly creation

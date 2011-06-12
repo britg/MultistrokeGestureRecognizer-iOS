@@ -93,15 +93,25 @@ function Multistroke(name, useBoundedRotationInvariance, strokes) // constructor
 {
 	this.Name = name;
 	this.NumStrokes = strokes.length; // number of individual strokes
+
+	console.log('Creating multistroke', name, 'with', this.NumStrokes, 'strokes');
 	
 	var order = new Array(); // array of integer indices
 	for (var i = 0; i < strokes.length; i++)
 		order[i] = i; // initialize
+
+	console.log("Initializing order of strokes", order);
+
 	var orders = new Array(); // array of integer arrays
 	HeapPermute(strokes.length, order, /*out*/ orders);
+
+	console.log("Heap permuted order of strokes", orders);
 	
 	this.Templates = new Array(); // unistrokes for this multistroke
 	var unistrokes = MakeUnistrokes(strokes, orders); // returns array of point arrays
+
+	//console.log("Unistrokes created for all permutations", unistrokes);
+
 	for (var j = 0; j < unistrokes.length; j++)
 		this.Templates[j] = new Template(name, useBoundedRotationInvariance, unistrokes[j]);
 }
@@ -274,6 +284,7 @@ function NDollarRecognizer(useBoundedRotationInvariance) // constructor
 //
 function HeapPermute(n, order, /*out*/ orders)
 {
+	console.log("permuting n", n);
 	if (n == 1)
 	{
 		orders[orders.length] = order.slice(); // append copy

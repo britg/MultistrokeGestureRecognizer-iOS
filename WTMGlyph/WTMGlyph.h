@@ -12,6 +12,8 @@
 @interface WTMGlyph : NSObject {
     NSString *name;
     NSMutableArray *strokes;
+    NSMutableArray *strokeOrders;
+    NSMutableArray *permutedStrokeOrders;
     NSMutableArray *templates;
     
     WTMGlyphStroke *currentStroke;
@@ -27,7 +29,7 @@
 
 - (void)createTemplates;
 - (void)createTemplatesFromJSONData:(NSData *)jsonData;
-- (void)heapPermute;
+- (void)permuteStrokeOrders:(int)count;
 
 - (void)addPoint:(CGPoint)point;
 - (void)startStroke;
