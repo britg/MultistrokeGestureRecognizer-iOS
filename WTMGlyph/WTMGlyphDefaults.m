@@ -13,5 +13,6 @@ int const WTMGlyphMinInflectionPointCount = 10;
 
 int const WTMGlyphResolution = 320;
 int const WTMGlyphResamplePointsCount = 96;
+int const WTMGlyphStartAngleIndex = 12;
 
 float const WTMGlyph1DThreshold = 0.25;

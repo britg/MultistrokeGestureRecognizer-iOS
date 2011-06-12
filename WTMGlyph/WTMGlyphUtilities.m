@@ -172,3 +172,56 @@ float IndicativeAngle(NSArray *points) {
     return atan2f(y, x);
 }
 
+NSArray* TranslateToOrigin(NSArray *points) {
+    NSMutableArray *translated = [NSMutableArray array];
+    CGPoint centroid = Centroid(points);
+    float qx;
+    float qy;
+    
+    for (int i = 0; i < [points count]; i++) {
+        NSValue *pointValue = [points objectAtIndex:i];
+        CGPoint point = [pointValue CGPointValue];
+        qx = point.x - centroid.x;
+        qy = point.y - centroid.y;
+        [translated addObject:[NSValue valueWithCGPoint:CGPointMake(qx, qy)]];
+    }
+    
+    return translated;
+}
+
+CGPoint CalcStartUnitVector(NSArray *points, int count) {
+    CGPoint pointAtIndex = [[points objectAtIndex:count] CGPointValue];
+    CGPoint firstPoint = [[points objectAtIndex:0] CGPointValue];
+                          
+    CGPoint v = CGPointMake(pointAtIndex.x - firstPoint.x, pointAtIndex.y - firstPoint.y);
+    float len = sqrtf(v.x * v.x + v.y * v.y);
+    
+    return CGPointMake((v.x / len), (v.y / len));
+}
+
+NSArray* Vectorize(NSArray *points) {
+    NSMutableArray *vector = [NSMutableArray array];
+    
+    float cos = 1.0;
+    float sin = 0.0;
+    float sum = 0;
+    CGPoint point;
+    
+    for (int i = 0; i < [points count]; i++) {
+        point = [[points objectAtIndex:i] CGPointValue];
+        float newX = point.x * cos - point.y * sin;
+        float newY = point.y * cos + point.x * sin;
+        [vector addObject:[NSNumber numberWithFloat:newX]];
+        [vector addObject:[NSNumber numberWithFloat:newY]];
+        sum += newX * newX + newY * newY;
+    }
+    
+    float magnitude = sqrtf(sum);
+    for (int i = 0; i < [vector count]; i++) {
+        NSNumber *val = [vector objectAtIndex:i];
+        float scaled = [val floatValue] / magnitude;
+        [vector replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:scaled]];
+    }
+    
+    return vector;
+}

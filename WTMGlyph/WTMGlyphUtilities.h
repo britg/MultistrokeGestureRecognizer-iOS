@@ -15,3 +15,6 @@ NSMutableArray* Splice(NSMutableArray *original, id newVal, int i);
 float PathLength(NSArray *points);
 float Distance(CGPoint point1, CGPoint point2);
 float IndicativeAngle(NSArray *points);
+NSArray* TranslateToOrigin(NSArray *points);
+CGPoint CalcStartUnitVector(NSArray *points, int count);
+NSArray* Vectorize(NSArray *points);

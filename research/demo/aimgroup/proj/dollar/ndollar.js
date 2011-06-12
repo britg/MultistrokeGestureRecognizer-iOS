@@ -93,6 +93,8 @@ function Template(name, useBoundedRotationInvariance, points) // constructor
 	this.Points = TranslateTo(this.Points, Origin);
 	this.StartUnitVector = CalcStartUnitVector(this.Points, StartAngleIndex);
 	this.Vector = Vectorize(this.Points, useBoundedRotationInvariance); // for Protractor
+
+	debugger;
 }
 //
 // Multistroke class: a container for unistroke templates
@@ -405,7 +407,7 @@ function ScaleDimTo(points, size, oneDratio) // scales bbox uniformly for 1D, no
 {
 	var B = BoundingBox(points);
 	console.log("Bounding box", B);
-	debugger;
+
 	var uniformly = Math.min(B.Width / B.Height, B.Height / B.Width) <= oneDratio; // 1D or 2D gesture test
 	var newpoints = new Array();
 	for (var i = 0; i < points.length; i++)
@@ -525,7 +527,6 @@ function BoundingBox(points)
 			maxY = points[i].Y;
 	}
 
-	debugger;
 	return new Rectangle(minX, minY, maxX - minX, maxY - minY);
 }	
 function PathDistance(pts1, pts2) // average distance between corresponding points in two paths

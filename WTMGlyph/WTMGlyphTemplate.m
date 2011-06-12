@@ -17,11 +17,13 @@
 @synthesize name;
 @synthesize points;
 @synthesize normalizedPoints;
+@synthesize vector;
 
 - (void)dealloc {
     [name release];
     [points release];
     [normalizedPoints release];
+    [vector release];
     
     [super dealloc];
 }
@@ -39,22 +41,29 @@
 - (void)normalize {
     
     // Resample the points
-    self.normalizedPoints = [NSMutableArray arrayWithArray:Resample(self.points, WTMGlyphResamplePointsCount)];
-    DebugLog(@"Resampled points %@", self.normalizedPoints);
+    NSMutableArray *resampled = [NSMutableArray arrayWithArray:Resample(self.points, WTMGlyphResamplePointsCount)];
+    //DebugLog(@"Resampled points %@", resampled);
     
     // Calculate indicative angle (radians)
-    float radians = IndicativeAngle(self.normalizedPoints);
-    DebugLog(@"Indicative angle %f", radians);
+//    float radians = IndicativeAngle(resampled);
+//    DebugLog(@"Indicative angle %f", radians);
     
     // Scale points to the desired resolution
-    self.normalizedPoints = [NSMutableArray arrayWithArray:Scale(self.normalizedPoints, WTMGlyphResolution, WTMGlyph1DThreshold)];
-    DebugLog(@"Scaled points %@", self.normalizedPoints);
+    NSMutableArray *scaled = [NSMutableArray arrayWithArray:Scale(resampled, WTMGlyphResolution, WTMGlyph1DThreshold)];
+    //DebugLog(@"Scaled points %@", scaled);
     
     // Translate points to 0,0
+    NSMutableArray *translated = [NSMutableArray arrayWithArray:TranslateToOrigin(scaled)];
+    //DebugLog(@"Translated points %@", translated);
+    
+    self.normalizedPoints = translated;
     
     // Calculate start unit vector
+    startUnitVector = CalcStartUnitVector(translated, WTMGlyphStartAngleIndex);
     
     // Vectorize
+    self.vector = [NSMutableArray arrayWithArray:Vectorize(self.normalizedPoints)];
+    //DebugLog(@"Vector %@", self.vector);
 }
 
 
