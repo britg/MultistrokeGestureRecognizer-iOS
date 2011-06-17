@@ -9,6 +9,7 @@
 #import "WTMGlyph.h"
 #import "WTMGlyphStroke.h"
 #import "WTMGlyphTemplate.h"
+#import "WTMGlyphUtilities.h"
 #import "CJSONDeserializer.h"
 
 @implementation WTMGlyph
@@ -159,6 +160,25 @@
             [unistrokes addObject:unistroke];
         }
     }
+}
+
+#pragma mark - Recognition
+
+- (float)recognize:(WTMGlyphTemplate *)input {
+
+    float lowestDistance = FLT_MAX;
+    float distance = FLT_MAX;
+    
+    for (int i = 0; i < [self.templates count]; i++) {
+        WTMGlyphTemplate *template = [self.templates objectAtIndex:i];
+        distance = OptimalCosineDistance(template.vector, input.vector);
+        
+        if (distance < lowestDistance) {
+            lowestDistance = distance;
+        }
+    }
+    
+    return lowestDistance;
 }
 
 #pragma mark - On-the-fly creation

@@ -8,6 +8,7 @@
 
 #import "WTMGlyphDetector.h"
 #import "WTMGlyphDefaults.h"
+#import "WTMGlyphTemplate.h"
 
 
 @implementation WTMGlyphDetector
@@ -55,8 +56,8 @@
 }
 
 
-- (void)addGlyphFromJSON:(NSData *)jsonData {
-    WTMGlyph *t = [[WTMGlyph alloc] initWithName:@"t" JSONData:jsonData];
+- (void)addGlyphFromJSON:(NSData *)jsonData name:(NSString *)name {
+    WTMGlyph *t = [[WTMGlyph alloc] initWithName:name JSONData:jsonData];
     [self addGlyph:t];
 }
 
@@ -88,6 +89,21 @@
     // Compare the template against existing templates and find the best match.
     // If the best match is within a threshold, consider it a true match.
     
+    WTMGlyphTemplate *inputTemplate = [[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points];
+    WTMGlyph *glyph;
+    NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
+    WTMGlyph *bestMatch;
+    float highestScore = 0;
+    
+    while ((glyph = (WTMGlyph *)[eachGlyph nextObject])) {
+        float score = 1 / [glyph recognize:inputTemplate];
+        if (score > highestScore) {
+            highestScore = score;
+            bestMatch = glyph;
+        }
+    }
+    DebugLog(@"Glyph detected! %@ with a score of %f", bestMatch.name, highestScore);
+    [delegate glyphDetected:bestMatch];
 }
 
 - (NSArray *)resample:(NSArray *)_points {

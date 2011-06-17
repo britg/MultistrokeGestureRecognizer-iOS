@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WTMGlyphStroke.h"
+#import "WTMGlyphTemplate.h"
 
 @interface WTMGlyph : NSObject {
     NSString *name;
@@ -32,6 +33,8 @@
 - (void)createTemplatesFromJSONData:(NSData *)jsonData;
 - (void)permuteStrokeOrders:(int)count;
 - (void)createUnistrokes;
+
+- (float)recognize:(WTMGlyphTemplate *)_template;
 
 - (void)addPoint:(CGPoint)point;
 - (void)startStroke;

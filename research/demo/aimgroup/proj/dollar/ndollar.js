@@ -364,11 +364,13 @@ function Resample(points, n)
 	for (var i = 1; i < points.length; i++)
 	{
 		var d = Distance(points[i - 1], points[i]);
+		debugger;
 		if ((D + d) >= I)
 		{
 			var qx = points[i - 1].X + ((I - D) / d) * (points[i].X - points[i - 1].X);
 			var qy = points[i - 1].Y + ((I - D) / d) * (points[i].Y - points[i - 1].Y);
 			var q = new Point(qx, qy);
+			debugger;
 			newpoints[newpoints.length] = q; // append new point 'q'
 			points.splice(i, 0, q); // insert 'q' at position i in points s.t. 'q' will be the next i
 			D = 0.0;
@@ -380,6 +382,7 @@ function Resample(points, n)
 	{
 		newpoints[newpoints.length] = new Point(points[points.length - 1].X, points[points.length - 1].Y);
 	}
+	debugger;
 	return newpoints;
 }
 function IndicativeAngle(points)

@@ -32,7 +32,7 @@
 - (id)initWithGlyphs:(NSArray *)_glyphs;
 
 - (void)addGlyph:(WTMGlyph *)glyph;
-- (void)addGlyphFromJSON:(NSData *)jsonData;
+- (void)addGlyphFromJSON:(NSData *)jsonData name:(NSString *)name;
 - (void)removeGlyphByName:(NSString *)name;
 
 - (void)addPoint:(CGPoint)point;

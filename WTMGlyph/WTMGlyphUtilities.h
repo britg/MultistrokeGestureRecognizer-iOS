@@ -18,3 +18,4 @@ float IndicativeAngle(NSArray *points);
 NSArray* TranslateToOrigin(NSArray *points);
 CGPoint CalcStartUnitVector(NSArray *points, int count);
 NSArray* Vectorize(NSArray *points);
+float OptimalCosineDistance(NSArray *v1, NSArray *v2);

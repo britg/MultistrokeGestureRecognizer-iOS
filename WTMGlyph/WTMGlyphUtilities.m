@@ -43,9 +43,12 @@ NSArray* Resample(NSArray *points, int num) {
     }
     
     // rounding error handling
-    if ( newPoints.count == num - 1 ) {
+    if ( newPoints.count < num ) {
         NSValue *finalValue = [points objectAtIndex:points.count-1];
-        [newPoints addObject:finalValue];
+        
+        for (int j = 0; j < (num-newPoints.count); j++) {
+            [newPoints addObject:finalValue];
+        }
     }
     
     return newPoints;
@@ -224,4 +227,32 @@ NSArray* Vectorize(NSArray *points) {
     }
     
     return vector;
+}
+
+float OptimalCosineDistance(NSArray *v1, NSArray *v2) {
+    float a = 0.0;
+    float b = 0.0;
+    float v1i;
+    float v2i;
+    float v1next;
+    float v2next;
+    float angle;
+    float score;
+    
+    int mincount = (v1.count < v2.count ? v1.count : v2.count);
+    
+    for (int i = 0; i < mincount; i+=2) {
+        v1i = [[v1 objectAtIndex:i] floatValue];
+        v2i = [[v2 objectAtIndex:i] floatValue];
+        v1next = [[v1 objectAtIndex:(i+1)] floatValue];
+        v2next = [[v2 objectAtIndex:(i+1)] floatValue];
+        
+        a += v1i * v2i + v1next * v2next;
+        b += v1i * v2next + v1next * v2i;
+    }
+    
+    angle = atanf( b / a );
+    score = acosf(a * cos(angle) + b * sin(angle));
+    
+    return score;
 }
