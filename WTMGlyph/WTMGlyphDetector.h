@@ -28,8 +28,10 @@
 @property (nonatomic) NSInteger timeoutSeconds;
 
 + (id)detector;
++ (id)defaultDetector;
 - (id)init;
 - (id)initWithGlyphs:(NSArray *)_glyphs;
+- (id)initWithDefaultGlyphs;
 
 - (void)addGlyph:(WTMGlyph *)glyph;
 - (void)addGlyphFromJSON:(NSData *)jsonData name:(NSString *)name;

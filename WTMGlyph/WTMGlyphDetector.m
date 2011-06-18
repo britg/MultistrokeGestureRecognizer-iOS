@@ -24,6 +24,11 @@
     return detector;
 }
 
++ (id)defaultDetector {
+    WTMGlyphDetector *detector = [[WTMGlyphDetector alloc] initWithDefaultGlyphs];
+    return detector;
+}
+
 - (id)init {
     if ((self = [super init])) {
         self.points = [[NSMutableArray alloc] init];
@@ -36,6 +41,21 @@
 - (id)initWithGlyphs:(NSArray *)_glyphs {
     [self init];
     self.glyphs = [NSMutableArray arrayWithArray:_glyphs];
+    return self;
+}
+
+- (id)initWithDefaultGlyphs {
+    [self init];
+    
+    NSData *jsonData;
+    NSArray *fileNames = [NSArray arrayWithObjects: @"T", nil];
+    
+    for (int i = 0; i < fileNames.count; i++) {
+        NSString *name = [fileNames objectAtIndex:i];
+        jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"]];
+        [self addGlyphFromJSON:jsonData name:name];
+    }
+    
     return self;
 }
 

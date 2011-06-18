@@ -83,7 +83,6 @@
 		EA1BA9A9138E71BF00D9A7B9 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		EA1BA9AA138E71BF00D9A7B9 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		EA1BA9AB138E71BF00D9A7B9 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
-		EA1BA9C1138E795500D9A7B9 /* t.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = t.json; sourceTree = "<group>"; };
 		EA278049136DAD6A00E3065A /* WTMGlyphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDelegate.h; sourceTree = "<group>"; };
 		EA27804E136DB9D400E3065A /* WTMGlyphDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDefaults.h; sourceTree = "<group>"; };
 		EA27804F136DB9D400E3065A /* WTMGlyphDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDefaults.m; sourceTree = "<group>"; };
@@ -109,6 +108,10 @@
 		EA6C9320136DA48E008AD709 /* WTMGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyph.m; sourceTree = "<group>"; };
 		EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
 		EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
+		EAB3542713AC2DA10045B3EB /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
+		EAB3542813AC2F0A0045B3EB /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
+		EAB3542913AC2F110045B3EB /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		EAB3542A13AC30220045B3EB /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +273,10 @@
 		EABB80E4138027DE0062CB2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EA1BA9C1138E795500D9A7B9 /* t.json */,
+				EAB3542713AC2DA10045B3EB /* D.json */,
+				EAB3542813AC2F0A0045B3EB /* T.json */,
+				EAB3542913AC2F110045B3EB /* N.json */,
+				EAB3542A13AC30220045B3EB /* P.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
