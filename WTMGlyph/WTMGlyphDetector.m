@@ -48,12 +48,14 @@
     [self init];
     
     NSData *jsonData;
-    NSArray *fileNames = [NSArray arrayWithObjects: @"T", nil];
-    
+    NSArray *fileNames = [NSArray arrayWithObjects: @"D", @"T", @"N", @"P", nil];
+
     for (int i = 0; i < fileNames.count; i++) {
         NSString *name = [fileNames objectAtIndex:i];
-        jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"]];
-        [self addGlyphFromJSON:jsonData name:name];
+        jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"]];        
+        if (jsonData) {
+            [self addGlyphFromJSON:jsonData name:name];
+        }
     }
     
     return self;
