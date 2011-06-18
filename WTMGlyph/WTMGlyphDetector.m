@@ -13,6 +13,7 @@
 
 @implementation WTMGlyphDetector
 
+@synthesize delegate;
 @synthesize points;
 @synthesize glyphs;
 @synthesize timeoutSeconds;
@@ -125,7 +126,7 @@
         }
     }
     DebugLog(@"Glyph detected! %@ with a score of %f", bestMatch.name, highestScore);
-    [delegate glyphDetected:bestMatch];
+    [delegate glyphDetected:bestMatch withScore:highestScore];
 }
 
 - (NSArray *)resample:(NSArray *)_points {

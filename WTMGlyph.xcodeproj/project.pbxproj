@@ -112,6 +112,7 @@
 		EAB3542813AC2F0A0045B3EB /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
 		EAB3542913AC2F110045B3EB /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		EAB3542A13AC30220045B3EB /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
+		EACF224013ACF70F00B41B67 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +238,7 @@
 				EA583702138015020074BB72 /* WTMGlyphTemplate.m */,
 				EA4860EB1380411900E40C6C /* WTMGlyphUtilities.h */,
 				EA4860EC1380411900E40C6C /* WTMGlyphUtilities.m */,
+				EACF224013ACF70F00B41B67 /* LICENSE */,
 			);
 			path = WTMGlyph;
 			sourceTree = "<group>";

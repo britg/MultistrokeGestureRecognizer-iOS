@@ -11,6 +11,6 @@
 @protocol WTMGlyphDelegate <NSObject>
 
 @optional
-- (void)glyphDetected:(WTMGlyph *)glyph;
+- (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score;
 
 @end

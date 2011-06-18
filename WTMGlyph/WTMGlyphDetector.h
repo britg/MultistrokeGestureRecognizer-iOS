@@ -23,6 +23,7 @@
     
 }
 
+@property (nonatomic, assign) id delegate;
 @property (nonatomic, retain) NSMutableArray *points;
 @property (nonatomic, retain) NSMutableArray *glyphs;
 @property (nonatomic) NSInteger timeoutSeconds;
