@@ -8,7 +8,7 @@ More info [here](http://britg.com/2011/05/14/complex-gesture-recognition-in-ios-
 
 View the javascript implementation [here](http://depts.washington.edu/aimgroup/proj/dollar/ndollar.html)
 
-Anthony, L. and Wobbrock, J.O. (2010). [A lightweight multistroke recognizer for user interface prototypes](http://depts.washington.edu/aimgroup/proj/dollar/ndollar.html). Proceedings of Graphics Interface (GI '10). Ottawa, Ontario (May 31-June 2, 2010). Toronto, Ontario: Canadian Information Processing Society, pp. 245-252.
+Anthony, L. and Wobbrock, J.O. (2010). [A lightweight multistroke recognizer for user interface prototypes](http://faculty.washington.edu/wobbrock/pubs/gi-10.2.pdf). Proceedings of Graphics Interface (GI '10). Ottawa, Ontario (May 31-June 2, 2010). Toronto, Ontario: Canadian Information Processing Society, pp. 245-252.
 
 # Detecting Glyphs
 
