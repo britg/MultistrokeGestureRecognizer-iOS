@@ -4,6 +4,12 @@ This is an iOS implementation of the [N Dollar Gesture Recognizer](http://depts.
 
 More info [here](http://britg.com/2011/05/14/complex-gesture-recognition-in-ios-part-1-the-research/).
 
+# N Dollar Recognizer
+
+View the javascript implementation [here](http://depts.washington.edu/aimgroup/proj/dollar/ndollar.html)
+
+Anthony, L. and Wobbrock, J.O. (2010). A lightweight multistroke recognizer for user interface prototypes. Proceedings of Graphics Interface (GI '10). Ottawa, Ontario (May 31-June 2, 2010). Toronto, Ontario: Canadian Information Processing Society, pp. 245-252.
+
 # Detecting Glyphs
 
 A Glyph is a user-defined set of Strokes, which are in turn just an array of points. When a Glyph is initialized, it first permutes through all the possible combinations of Stroke directions/order necessary to recreate itself. It also resamples and resizes itslef into a bounding box. Finally, a Glyph creates unistrokes (Templates) from all the calculated multistrokes.
