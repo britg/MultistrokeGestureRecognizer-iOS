@@ -16,3 +16,5 @@ int const WTMGlyphResamplePointsCount = 96;
 int const WTMGlyphStartAngleIndex = 12;
 
 float const WTMGlyph1DThreshold = 0.25;
+
+int const WTMGlyphMinPoints = 20;

@@ -16,3 +16,5 @@ extern int const WTMGlyphResamplePointsCount;
 extern int const WTMGlyphStartAngleIndex;
 
 extern float const WTMGlyph1DThreshold;
+
+extern int const WTMGlyphMinPoints;

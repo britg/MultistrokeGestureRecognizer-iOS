@@ -112,6 +112,10 @@
     // Compare the template against existing templates and find the best match.
     // If the best match is within a threshold, consider it a true match.
     
+    if (points.count < WTMGlyphMinPoints) {
+        return;
+    }
+    
     WTMGlyphTemplate *inputTemplate = [[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points];
     WTMGlyph *glyph;
     NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
