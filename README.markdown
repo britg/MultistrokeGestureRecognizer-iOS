@@ -3,9 +3,10 @@
 This is an iOS implementation of the [N Dollar Gesture Recognizer](http://depts.washington.edu/aimgroup/proj/dollar/ndollar.html).
 
 More info:
-[The research](http://britg.com/2011/05/14/complex-gesture-recognition-in-ios-part-1-the-research/)
-[Explanation of this implementation](http://britg.com/2011/06/17/complex-gesture-recognition-in-ios-part-2-the-ios-implementation/)
-[Understanding the score that's returned](http://britg.com/2011/07/17/complex-gesture-recognition-understanding-the-score/)
+
+- [The research](http://britg.com/2011/05/14/complex-gesture-recognition-in-ios-part-1-the-research/)
+- [Explanation of this implementation](http://britg.com/2011/06/17/complex-gesture-recognition-in-ios-part-2-the-ios-implementation/)
+- [Understanding the score that's returned](http://britg.com/2011/07/17/complex-gesture-recognition-understanding-the-score/)
 
 # N Dollar Recognizer
 
