@@ -128,12 +128,14 @@
     
     while ((glyph = (WTMGlyph *)[eachGlyph nextObject])) {
         float score = 1 / [glyph recognize:inputTemplate];
+        DebugLog(@"Glyph: %@ Score: %f", glyph.name, score);
+        
         if (score > highestScore) {
             highestScore = score;
             bestMatch = glyph;
         }
     }
-    DebugLog(@"Glyph detected! %@ with a score of %f", bestMatch.name, highestScore);
+    DebugLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
     [delegate glyphDetected:bestMatch withScore:highestScore];
 }
 
