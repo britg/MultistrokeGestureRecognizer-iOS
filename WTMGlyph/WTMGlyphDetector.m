@@ -116,6 +116,10 @@
         return;
     }
     
+    if (self.glyphs.count < 1) {
+        return;
+    }
+    
     WTMGlyphTemplate *inputTemplate = [[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points];
     WTMGlyph *glyph;
     NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
