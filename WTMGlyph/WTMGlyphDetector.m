@@ -126,9 +126,15 @@
     WTMGlyph *bestMatch;
     float highestScore = 0;
     
+    NSMutableArray *results = [NSMutableArray array];
+    NSDictionary *result;
+    
     while ((glyph = (WTMGlyph *)[eachGlyph nextObject])) {
         float score = 1 / [glyph recognize:inputTemplate];
         DebugLog(@"Glyph: %@ Score: %f", glyph.name, score);
+        result = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:glyph.name, [NSNumber numberWithFloat:score], nil] 
+                                             forKeys:[NSArray arrayWithObjects:@"glyph", @"score", nil]];
+        [results addObject:result];
         
         if (score > highestScore) {
             highestScore = score;
@@ -136,7 +142,12 @@
         }
     }
     DebugLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
+    
+    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO] autorelease];
+    NSArray *sortedResults = [results sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
     [delegate glyphDetected:bestMatch withScore:highestScore];
+    [delegate glyphResults:sortedResults];
 }
 
 - (NSArray *)resample:(NSArray *)_points {

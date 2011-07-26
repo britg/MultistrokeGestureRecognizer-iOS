@@ -12,5 +12,6 @@
 
 @optional
 - (void)glyphDetected:(WTMGlyph *)glyph withScore:(float)score;
+- (void)glyphResults:(NSArray *)results;
 
 @end
