@@ -106,6 +106,10 @@
     [self.points addObject:[NSValue valueWithCGPoint:point]];
 }
 
+- (void)removeAllPoints {
+    [self.points removeAllObjects];
+}
+
 - (void)detectGlyph {
     
     // Take the captured points and make a Template
@@ -133,7 +137,7 @@
         float score = 1 / [glyph recognize:inputTemplate];
         DebugLog(@"Glyph: %@ Score: %f", glyph.name, score);
         result = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:glyph.name, [NSNumber numberWithFloat:score], nil] 
-                                             forKeys:[NSArray arrayWithObjects:@"glyph", @"score", nil]];
+                                             forKeys:[NSArray arrayWithObjects:@"name", @"score", nil]];
         [results addObject:result];
         
         if (score > highestScore) {

@@ -356,6 +356,7 @@
 		EA6C92ED136DA457008AD709 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Warrior Thief Mage Studios";
 			};
 			buildConfigurationList = EA6C92F0136DA457008AD709 /* Build configuration list for PBXProject "WTMGlyph" */;

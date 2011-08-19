@@ -39,6 +39,7 @@
 - (void)removeGlyphByName:(NSString *)name;
 
 - (void)addPoint:(CGPoint)point;
+- (void)removeAllPoints;
 - (void)detectGlyph;
 - (NSArray *)resample:(NSArray *)_points;
 - (NSArray *)translate:(NSArray *)_points;
