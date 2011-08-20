@@ -33,6 +33,7 @@
 - (id)init {
     if ((self = [super init])) {
         self.points = [[NSMutableArray alloc] init];
+        self.glyphs = [[NSMutableArray alloc] init];
         self.timeoutSeconds = WTMGlyphDefaultTimeoutSeconds;
         lastPointTime = [[NSDate date] timeIntervalSince1970];
     }
@@ -95,6 +96,10 @@
     }
 }
 
+- (void)removeAllGlyphs {
+    [self.glyphs removeAllObjects];
+}
+
 
 #pragma mark - Detection
 
@@ -116,7 +121,7 @@
     // Compare the template against existing templates and find the best match.
     // If the best match is within a threshold, consider it a true match.
     
-    if (points.count < WTMGlyphMinPoints) {
+    if (![self hasEnoughPoints]) {
         return;
     }
     
@@ -198,6 +203,10 @@
     }
     
     return NO;
+}
+
+- (BOOL)hasEnoughPoints {
+    return (self.points.count >= WTMGlyphMinPoints);
 }
 
 - (void)reset {

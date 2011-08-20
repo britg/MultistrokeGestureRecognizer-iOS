@@ -24,9 +24,9 @@
 }
 
 @property (nonatomic, assign) id delegate;
-@property (nonatomic, retain) NSMutableArray *points;
-@property (nonatomic, retain) NSMutableArray *glyphs;
-@property (nonatomic) NSInteger timeoutSeconds;
+@property (nonatomic, assign) NSMutableArray *points;
+@property (nonatomic, assign) NSMutableArray *glyphs;
+@property (nonatomic, assign) NSInteger timeoutSeconds;
 
 + (id)detector;
 + (id)defaultDetector;
@@ -40,6 +40,7 @@
 
 - (void)addPoint:(CGPoint)point;
 - (void)removeAllPoints;
+- (void)removeAllGlyphs;
 - (void)detectGlyph;
 - (NSArray *)resample:(NSArray *)_points;
 - (NSArray *)translate:(NSArray *)_points;
@@ -49,5 +50,6 @@
 - (void)resetIfTimedOut;
 - (void)reset;
 - (BOOL)hasTimedOut;
+- (BOOL)hasEnoughPoints;
 
 @end
