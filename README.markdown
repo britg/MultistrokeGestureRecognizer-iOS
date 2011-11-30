@@ -8,6 +8,10 @@ More info:
 - [Explanation of this implementation](http://britg.com/2011/06/17/complex-gesture-recognition-in-ios-part-2-the-ios-implementation/)
 - [Understanding the score that's returned](http://britg.com/2011/07/17/complex-gesture-recognition-understanding-the-score/)
 
+Tools:
+
+- [Shape Editor](http://lucalaiho.altervista.org/joomla/shape-editor) - A java app for creating shapes and exporting them as JSON files
+
 # N Dollar Recognizer
 
 View the javascript implementation [here](http://depts.washington.edu/aimgroup/proj/dollar/ndollar.html)
