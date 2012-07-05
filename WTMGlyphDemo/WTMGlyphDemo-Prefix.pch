@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'WTMGlyphDemo' target in the 'WTMGlyphDemo' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+#endif
+
+
+
+//The below comes from WTMGlyph/WTMGlyph-Prefix.pch 
+
+#import "WTMGlyphDefaults.h"
+
+#ifdef DEBUG
+#define DebugLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DebugLog( s, ... ) 
+#endif
