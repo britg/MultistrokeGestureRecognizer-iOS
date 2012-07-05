@@ -28,6 +28,21 @@
     return self;
 }
 
+- (void)initGestureDetector
+{
+  self.glyphDetector = [WTMGlyphDetector detector];
+  self.glyphDetector.delegate = self;
+  self.glyphDetector.timeoutSeconds = 1;
+  
+  if (self.glyphNamesArray == nil)
+    self.glyphNamesArray = [[NSMutableArray alloc] init];
+}
+
+
+
+
+#pragma mark - Public interfaces
+
 - (NSString *)getGlyphNamesString
 {
   if (self.glyphNamesArray == nil || [self.glyphNamesArray count] <= 0)
@@ -36,21 +51,24 @@
   return [self.glyphNamesArray componentsJoinedByString: @", "];
 }
 
-- (void)initGestureDetector
+- (void)loadTemplatesWithNames:(NSString*)firstTemplate, ... 
 {
-  self.glyphDetector = [WTMGlyphDetector detector];
-  self.glyphDetector.delegate = self;
-  
-  //Create your own gesture templates with ShapeEditor: http://lucalaiho.altervista.org/joomla/shape-editor
-  self.glyphNamesArray = [NSMutableArray arrayWithObjects:@"N", @"T", @"L", @"W", @"V", @"circle", @"square", @"triangle", nil];
-  
-  // Add initial glyph templates
-  for (NSString *glyphName in self.glyphNamesArray) {
+  va_list args;
+  va_start(args, firstTemplate);
+  for (NSString *glyphName = firstTemplate; glyphName != nil; glyphName = va_arg(args, id))
+  {
+    if (![glyphName isKindOfClass:[NSString class]])
+      continue;
+    
+    [self.glyphNamesArray addObject:glyphName];
+    
     NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:glyphName ofType:@"json"]];
     [self.glyphDetector addGlyphFromJSON:jsonData name:glyphName];
   }
-
+  va_end(args);
 }
+
+
 
 
 

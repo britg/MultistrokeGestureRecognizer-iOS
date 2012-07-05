@@ -27,6 +27,7 @@
   self.gestureDetectorView = [[WTMGlyphDetectorView alloc] initWithFrame:self.view.bounds];
   self.gestureDetectorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   self.gestureDetectorView.delegate = self;
+  [self.gestureDetectorView loadTemplatesWithNames:@"N", @"T", @"W", @"V", @"circle", @"square", @"triangle", nil];
   [self.view addSubview:self.gestureDetectorView];
 }
 
@@ -36,7 +37,7 @@
   
   NSString *glyphNames = [self.gestureDetectorView getGlyphNamesString];
   if ([glyphNames length] > 0) {
-    NSString *statusText = [NSString stringWithFormat:@"Loaded with %@ templates.\nWait 2 seconds between gestures.\n\nStart drawing.", [self.gestureDetectorView getGlyphNamesString]];
+    NSString *statusText = [NSString stringWithFormat:@"Loaded with %@ templates.\n\nStart drawing.", [self.gestureDetectorView getGlyphNamesString]];
     self.lblStatus.text = statusText;
   }
 }
@@ -68,7 +69,7 @@
   
   NSString *glyphNames = [self.gestureDetectorView getGlyphNamesString];
   if ([glyphNames length] > 0)
-    statusString = [statusString stringByAppendingFormat:@"Loaded with %@ templates.\nWait 2 seconds between gestures.\n\n", glyphNames];
+    statusString = [statusString stringByAppendingFormat:@"Loaded with %@ templates.\n\n", glyphNames];
   
   statusString = [statusString stringByAppendingFormat:@"Last gesture detected: %@\nScore: %.3f", glyph.name, score];
   

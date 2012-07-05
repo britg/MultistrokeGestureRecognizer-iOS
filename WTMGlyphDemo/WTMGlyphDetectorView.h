@@ -19,6 +19,8 @@
 @interface WTMGlyphDetectorView : UIView
 @property (nonatomic, strong) id delegate;
 
+- (void)loadTemplatesWithNames:(NSString*)firstTemplate, ... NS_REQUIRES_NIL_TERMINATION;
+
 - (NSString *)getGlyphNamesString;
 
 @end
