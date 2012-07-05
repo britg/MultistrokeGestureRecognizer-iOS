@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 torin.nguyen@2359media.com. All rights reserved.
 //
 
+#define GESTURE_SCORE_THRESHOLD         0.7f
+
 #import "ViewController.h"
 #import "WTMGlyphDetectorView.h"
 
@@ -34,7 +36,7 @@
   
   NSString *glyphNames = [self.gestureDetectorView getGlyphNamesString];
   if ([glyphNames length] > 0) {
-    NSString *statusText = [NSString stringWithFormat:@"Start drawing.\nLoaded with %@ templates.", [self.gestureDetectorView getGlyphNamesString]];
+    NSString *statusText = [NSString stringWithFormat:@"Loaded with %@ templates.\nWait 2 seconds between gestures.\n\nStart drawing.", [self.gestureDetectorView getGlyphNamesString]];
     self.lblStatus.text = statusText;
   }
 }
@@ -57,13 +59,18 @@
 
 - (void)wtmGlyphDetectorView:(WTMGlyphDetectorView*)theView glyphDetected:(WTMGlyph *)glyph withScore:(float)score
 {
+  //Reject detection when quality too low
+  //More info: http://britg.com/2011/07/17/complex-gesture-recognition-understanding-the-score/
+  if (score < GESTURE_SCORE_THRESHOLD)
+    return;
+  
   NSString *statusString = @"";
   
   NSString *glyphNames = [self.gestureDetectorView getGlyphNamesString];
   if ([glyphNames length] > 0)
-    statusString = [statusString stringByAppendingFormat:@"Loaded with %@ templates.\n", glyphNames];
+    statusString = [statusString stringByAppendingFormat:@"Loaded with %@ templates.\nWait 2 seconds between gestures.\n\n", glyphNames];
   
-  statusString = [statusString stringByAppendingFormat:@"Last gesture detected: %@\nScore: %.1f", glyph.name, score];
+  statusString = [statusString stringByAppendingFormat:@"Last gesture detected: %@\nScore: %.3f", glyph.name, score];
   
   self.lblStatus.text = statusString;
 }

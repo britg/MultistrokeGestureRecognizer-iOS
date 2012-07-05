@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4249137A15A5422B001F58DD /* WTMGlyphDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */; };
+		4249138615A5544E001F58DD /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138015A5544E001F58DD /* circle.json */; };
+		4249138715A5544E001F58DD /* L.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138115A5544E001F58DD /* L.json */; };
+		4249138815A5544E001F58DD /* square.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138215A5544E001F58DD /* square.json */; };
+		4249138915A5544E001F58DD /* triangle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138315A5544E001F58DD /* triangle.json */; };
+		4249138A15A5544E001F58DD /* V.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138415A5544E001F58DD /* V.json */; };
+		4249138B15A5544E001F58DD /* W.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138515A5544E001F58DD /* W.json */; };
 		42E359D415A536C000C9A3F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E359D315A536C000C9A3F3 /* UIKit.framework */; };
 		42E359D615A536C000C9A3F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E359D515A536C000C9A3F3 /* Foundation.framework */; };
 		42E359D815A536C000C9A3F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E359D715A536C000C9A3F3 /* CoreGraphics.framework */; };
@@ -42,6 +48,12 @@
 /* Begin PBXFileReference section */
 		4249137815A5422B001F58DD /* WTMGlyphDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetectorView.h; sourceTree = "<group>"; };
 		4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetectorView.m; sourceTree = "<group>"; };
+		4249138015A5544E001F58DD /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
+		4249138115A5544E001F58DD /* L.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = L.json; sourceTree = "<group>"; };
+		4249138215A5544E001F58DD /* square.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square.json; sourceTree = "<group>"; };
+		4249138315A5544E001F58DD /* triangle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle.json; sourceTree = "<group>"; };
+		4249138415A5544E001F58DD /* V.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V.json; sourceTree = "<group>"; };
+		4249138515A5544E001F58DD /* W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = W.json; sourceTree = "<group>"; };
 		42E359CF15A536C000C9A3F3 /* WTMGlyphDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTMGlyphDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E359D315A536C000C9A3F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42E359D515A536C000C9A3F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +123,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4249137F15A5544E001F58DD /* gestures */ = {
+			isa = PBXGroup;
+			children = (
+				4249138015A5544E001F58DD /* circle.json */,
+				4249138115A5544E001F58DD /* L.json */,
+				4249138215A5544E001F58DD /* square.json */,
+				4249138315A5544E001F58DD /* triangle.json */,
+				4249138415A5544E001F58DD /* V.json */,
+				4249138515A5544E001F58DD /* W.json */,
+			);
+			path = gestures;
+			sourceTree = "<group>";
+		};
 		42E359C415A536C000C9A3F3 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +167,7 @@
 		42E359D915A536C000C9A3F3 /* WTMGlyphDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4249137F15A5544E001F58DD /* gestures */,
 				42E359E215A536C000C9A3F3 /* AppDelegate.h */,
 				42E359E315A536C000C9A3F3 /* AppDelegate.m */,
 				42E359E515A536C000C9A3F3 /* ViewController.h */,
@@ -294,6 +320,12 @@
 				42E35A3215A5372500C9A3F3 /* N.json in Resources */,
 				42E35A3415A5372500C9A3F3 /* P.json in Resources */,
 				42E35A3615A5372500C9A3F3 /* T.json in Resources */,
+				4249138615A5544E001F58DD /* circle.json in Resources */,
+				4249138715A5544E001F58DD /* L.json in Resources */,
+				4249138815A5544E001F58DD /* square.json in Resources */,
+				4249138915A5544E001F58DD /* triangle.json in Resources */,
+				4249138A15A5544E001F58DD /* V.json in Resources */,
+				4249138B15A5544E001F58DD /* W.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

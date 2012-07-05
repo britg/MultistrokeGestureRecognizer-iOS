@@ -41,9 +41,10 @@
   self.glyphDetector = [WTMGlyphDetector detector];
   self.glyphDetector.delegate = self;
   
-  // Add initial glyph templates from JSON files
-  // Rinse and repeat for each of the gestures you want to detect
-  self.glyphNamesArray = [NSMutableArray arrayWithObjects:@"N", @"D", @"P", @"T", nil];
+  //Create your own gesture templates with ShapeEditor: http://lucalaiho.altervista.org/joomla/shape-editor
+  self.glyphNamesArray = [NSMutableArray arrayWithObjects:@"N", @"T", @"L", @"W", @"V", @"circle", @"square", @"triangle", nil];
+  
+  // Add initial glyph templates
   for (NSString *glyphName in self.glyphNamesArray) {
     NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:glyphName ofType:@"json"]];
     [self.glyphDetector addGlyphFromJSON:jsonData name:glyphName];
@@ -74,6 +75,13 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  //This is basically the content of resetIfTimeout
+  BOOL hasTimeOut = [self.glyphDetector hasTimedOut];
+  if (hasTimeOut) {
+    [self.glyphDetector reset];
+    NSLog(@"Gesture detector reset");
+  }
+  
   UITouch *touch = [touches anyObject];
   CGPoint point = [touch locationInView:self];
   [self.glyphDetector addPoint:point];
