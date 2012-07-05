@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4249137A15A5422B001F58DD /* WTMGlyphDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */; };
+		4249138615A5544E001F58DD /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138015A5544E001F58DD /* circle.json */; };
+		4249138815A5544E001F58DD /* square.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138215A5544E001F58DD /* square.json */; };
+		4249138915A5544E001F58DD /* triangle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138315A5544E001F58DD /* triangle.json */; };
+		4249138A15A5544E001F58DD /* V.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138415A5544E001F58DD /* V.json */; };
+		4249138B15A5544E001F58DD /* W.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138515A5544E001F58DD /* W.json */; };
+		42E359D415A536C000C9A3F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E359D315A536C000C9A3F3 /* UIKit.framework */; };
+		42E359D615A536C000C9A3F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E359D515A536C000C9A3F3 /* Foundation.framework */; };
+		42E359D815A536C000C9A3F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E359D715A536C000C9A3F3 /* CoreGraphics.framework */; };
+		42E359DE15A536C000C9A3F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42E359DC15A536C000C9A3F3 /* InfoPlist.strings */; };
+		42E359E015A536C000C9A3F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359DF15A536C000C9A3F3 /* main.m */; };
+		42E359E415A536C000C9A3F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359E315A536C000C9A3F3 /* AppDelegate.m */; };
+		42E359E715A536C000C9A3F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359E615A536C000C9A3F3 /* ViewController.m */; };
+		42E359EA15A536C000C9A3F3 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E359E815A536C000C9A3F3 /* ViewController_iPhone.xib */; };
+		42E359ED15A536C000C9A3F3 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E359EB15A536C000C9A3F3 /* ViewController_iPad.xib */; };
+		42E35A2715A5372500C9A3F3 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359FC15A5372500C9A3F3 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2815A5372500C9A3F3 /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E359FD15A5372500C9A3F3 /* D.json */; };
+		42E35A2915A5372500C9A3F3 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0015A5372500C9A3F3 /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2A15A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0215A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2B15A5372500C9A3F3 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0415A5372500C9A3F3 /* CJSONSerialization.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2C15A5372500C9A3F3 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0615A5372500C9A3F3 /* CJSONSerializedData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2D15A5372500C9A3F3 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0915A5372500C9A3F3 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2E15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0B15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2F15A5372500C9A3F3 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0E15A5372500C9A3F3 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3015A5372500C9A3F3 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1015A5372500C9A3F3 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3115A5372500C9A3F3 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1215A5372500C9A3F3 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3215A5372500C9A3F3 /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E35A1415A5372500C9A3F3 /* N.json */; };
+		42E35A3415A5372500C9A3F3 /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E35A1615A5372500C9A3F3 /* P.json */; };
+		42E35A3615A5372500C9A3F3 /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E35A1815A5372500C9A3F3 /* T.json */; };
+		42E35A3715A5372500C9A3F3 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1B15A5372500C9A3F3 /* WTMGlyph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3815A5372500C9A3F3 /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1D15A5372500C9A3F3 /* WTMGlyphDefaults.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3915A5372500C9A3F3 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2015A5372500C9A3F3 /* WTMGlyphDetector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3A15A5372500C9A3F3 /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2215A5372500C9A3F3 /* WTMGlyphStroke.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3B15A5372500C9A3F3 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2415A5372500C9A3F3 /* WTMGlyphTemplate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3C15A5372500C9A3F3 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2615A5372500C9A3F3 /* WTMGlyphUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4249137815A5422B001F58DD /* WTMGlyphDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetectorView.h; sourceTree = "<group>"; };
+		4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetectorView.m; sourceTree = "<group>"; };
+		4249138015A5544E001F58DD /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
+		4249138215A5544E001F58DD /* square.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = square.json; sourceTree = "<group>"; };
+		4249138315A5544E001F58DD /* triangle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = triangle.json; sourceTree = "<group>"; };
+		4249138415A5544E001F58DD /* V.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V.json; sourceTree = "<group>"; };
+		4249138515A5544E001F58DD /* W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = W.json; sourceTree = "<group>"; };
+		42E359CF15A536C000C9A3F3 /* WTMGlyphDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTMGlyphDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E359D315A536C000C9A3F3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		42E359D515A536C000C9A3F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42E359D715A536C000C9A3F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42E359DB15A536C000C9A3F3 /* WTMGlyphDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WTMGlyphDemo-Info.plist"; sourceTree = "<group>"; };
+		42E359DD15A536C000C9A3F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42E359DF15A536C000C9A3F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42E359E115A536C000C9A3F3 /* WTMGlyphDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTMGlyphDemo-Prefix.pch"; sourceTree = "<group>"; };
+		42E359E215A536C000C9A3F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42E359E315A536C000C9A3F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42E359E515A536C000C9A3F3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		42E359E615A536C000C9A3F3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42E359E915A536C000C9A3F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		42E359EC15A536C000C9A3F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		42E359FB15A5372500C9A3F3 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		42E359FC15A5372500C9A3F3 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		42E359FD15A5372500C9A3F3 /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
+		42E359FF15A5372500C9A3F3 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		42E35A0015A5372500C9A3F3 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		42E35A0115A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		42E35A0215A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		42E35A0315A5372500C9A3F3 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		42E35A0415A5372500C9A3F3 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		42E35A0515A5372500C9A3F3 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		42E35A0615A5372500C9A3F3 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		42E35A0815A5372500C9A3F3 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		42E35A0915A5372500C9A3F3 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		42E35A0A15A5372500C9A3F3 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		42E35A0B15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		42E35A0D15A5372500C9A3F3 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		42E35A0E15A5372500C9A3F3 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		42E35A0F15A5372500C9A3F3 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		42E35A1015A5372500C9A3F3 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		42E35A1115A5372500C9A3F3 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		42E35A1215A5372500C9A3F3 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		42E35A1315A5372500C9A3F3 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		42E35A1415A5372500C9A3F3 /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
+		42E35A1515A5372500C9A3F3 /* ndollar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ndollar.js; sourceTree = "<group>"; };
+		42E35A1615A5372500C9A3F3 /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
+		42E35A1815A5372500C9A3F3 /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
+		42E35A1A15A5372500C9A3F3 /* WTMGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyph.h; sourceTree = "<group>"; };
+		42E35A1B15A5372500C9A3F3 /* WTMGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyph.m; sourceTree = "<group>"; };
+		42E35A1C15A5372500C9A3F3 /* WTMGlyphDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDefaults.h; sourceTree = "<group>"; };
+		42E35A1D15A5372500C9A3F3 /* WTMGlyphDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDefaults.m; sourceTree = "<group>"; };
+		42E35A1E15A5372500C9A3F3 /* WTMGlyphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDelegate.h; sourceTree = "<group>"; };
+		42E35A1F15A5372500C9A3F3 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
+		42E35A2015A5372500C9A3F3 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
+		42E35A2115A5372500C9A3F3 /* WTMGlyphStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphStroke.h; sourceTree = "<group>"; };
+		42E35A2215A5372500C9A3F3 /* WTMGlyphStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphStroke.m; sourceTree = "<group>"; };
+		42E35A2315A5372500C9A3F3 /* WTMGlyphTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphTemplate.h; sourceTree = "<group>"; };
+		42E35A2415A5372500C9A3F3 /* WTMGlyphTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphTemplate.m; sourceTree = "<group>"; };
+		42E35A2515A5372500C9A3F3 /* WTMGlyphUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphUtilities.h; sourceTree = "<group>"; };
+		42E35A2615A5372500C9A3F3 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42E359CC15A536C000C9A3F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E359D415A536C000C9A3F3 /* UIKit.framework in Frameworks */,
+				42E359D615A536C000C9A3F3 /* Foundation.framework in Frameworks */,
+				42E359D815A536C000C9A3F3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4249137F15A5544E001F58DD /* gestures */ = {
+			isa = PBXGroup;
+			children = (
+				4249138015A5544E001F58DD /* circle.json */,
+				4249138215A5544E001F58DD /* square.json */,
+				4249138315A5544E001F58DD /* triangle.json */,
+				4249138415A5544E001F58DD /* V.json */,
+				4249138515A5544E001F58DD /* W.json */,
+			);
+			path = gestures;
+			sourceTree = "<group>";
+		};
+		42E359C415A536C000C9A3F3 = {
+			isa = PBXGroup;
+			children = (
+				42E359FA15A5372500C9A3F3 /* WTMGlyph */,
+				42E359D915A536C000C9A3F3 /* WTMGlyphDemo */,
+				42E359D215A536C000C9A3F3 /* Frameworks */,
+				42E359D015A536C000C9A3F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42E359D015A536C000C9A3F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42E359CF15A536C000C9A3F3 /* WTMGlyphDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42E359D215A536C000C9A3F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42E359D315A536C000C9A3F3 /* UIKit.framework */,
+				42E359D515A536C000C9A3F3 /* Foundation.framework */,
+				42E359D715A536C000C9A3F3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42E359D915A536C000C9A3F3 /* WTMGlyphDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4249137F15A5544E001F58DD /* gestures */,
+				42E359E215A536C000C9A3F3 /* AppDelegate.h */,
+				42E359E315A536C000C9A3F3 /* AppDelegate.m */,
+				42E359E515A536C000C9A3F3 /* ViewController.h */,
+				42E359E615A536C000C9A3F3 /* ViewController.m */,
+				4249137815A5422B001F58DD /* WTMGlyphDetectorView.h */,
+				4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */,
+				42E359E815A536C000C9A3F3 /* ViewController_iPhone.xib */,
+				42E359EB15A536C000C9A3F3 /* ViewController_iPad.xib */,
+				42E359DA15A536C000C9A3F3 /* Supporting Files */,
+			);
+			path = WTMGlyphDemo;
+			sourceTree = "<group>";
+		};
+		42E359DA15A536C000C9A3F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42E359DB15A536C000C9A3F3 /* WTMGlyphDemo-Info.plist */,
+				42E359DC15A536C000C9A3F3 /* InfoPlist.strings */,
+				42E359DF15A536C000C9A3F3 /* main.m */,
+				42E359E115A536C000C9A3F3 /* WTMGlyphDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42E359FA15A5372500C9A3F3 /* WTMGlyph */ = {
+			isa = PBXGroup;
+			children = (
+				42E359FE15A5372500C9A3F3 /* Experimental */,
+				42E35A0715A5372500C9A3F3 /* Extensions */,
+				42E35A0C15A5372500C9A3F3 /* JSON */,
+				42E35A1415A5372500C9A3F3 /* N.json */,
+				42E359FD15A5372500C9A3F3 /* D.json */,
+				42E35A1615A5372500C9A3F3 /* P.json */,
+				42E35A1815A5372500C9A3F3 /* T.json */,
+				42E35A1515A5372500C9A3F3 /* ndollar.js */,
+				42E359FB15A5372500C9A3F3 /* CDataScanner.h */,
+				42E359FC15A5372500C9A3F3 /* CDataScanner.m */,
+				42E35A1A15A5372500C9A3F3 /* WTMGlyph.h */,
+				42E35A1B15A5372500C9A3F3 /* WTMGlyph.m */,
+				42E35A1C15A5372500C9A3F3 /* WTMGlyphDefaults.h */,
+				42E35A1D15A5372500C9A3F3 /* WTMGlyphDefaults.m */,
+				42E35A1E15A5372500C9A3F3 /* WTMGlyphDelegate.h */,
+				42E35A1F15A5372500C9A3F3 /* WTMGlyphDetector.h */,
+				42E35A2015A5372500C9A3F3 /* WTMGlyphDetector.m */,
+				42E35A2115A5372500C9A3F3 /* WTMGlyphStroke.h */,
+				42E35A2215A5372500C9A3F3 /* WTMGlyphStroke.m */,
+				42E35A2315A5372500C9A3F3 /* WTMGlyphTemplate.h */,
+				42E35A2415A5372500C9A3F3 /* WTMGlyphTemplate.m */,
+				42E35A2515A5372500C9A3F3 /* WTMGlyphUtilities.h */,
+				42E35A2615A5372500C9A3F3 /* WTMGlyphUtilities.m */,
+			);
+			path = WTMGlyph;
+			sourceTree = "<group>";
+		};
+		42E359FE15A5372500C9A3F3 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				42E359FF15A5372500C9A3F3 /* CFilteringJSONSerializer.h */,
+				42E35A0015A5372500C9A3F3 /* CFilteringJSONSerializer.m */,
+				42E35A0115A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.h */,
+				42E35A0215A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m */,
+				42E35A0315A5372500C9A3F3 /* CJSONSerialization.h */,
+				42E35A0415A5372500C9A3F3 /* CJSONSerialization.m */,
+				42E35A0515A5372500C9A3F3 /* CJSONSerializedData.h */,
+				42E35A0615A5372500C9A3F3 /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		42E35A0715A5372500C9A3F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42E35A0815A5372500C9A3F3 /* CDataScanner_Extensions.h */,
+				42E35A0915A5372500C9A3F3 /* CDataScanner_Extensions.m */,
+				42E35A0A15A5372500C9A3F3 /* NSDictionary_JSONExtensions.h */,
+				42E35A0B15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		42E35A0C15A5372500C9A3F3 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				42E35A0D15A5372500C9A3F3 /* CJSONDeserializer.h */,
+				42E35A0E15A5372500C9A3F3 /* CJSONDeserializer.m */,
+				42E35A0F15A5372500C9A3F3 /* CJSONScanner.h */,
+				42E35A1015A5372500C9A3F3 /* CJSONScanner.m */,
+				42E35A1115A5372500C9A3F3 /* CJSONSerializer.h */,
+				42E35A1215A5372500C9A3F3 /* CJSONSerializer.m */,
+				42E35A1315A5372500C9A3F3 /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42E359CE15A536C000C9A3F3 /* WTMGlyphDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E359F015A536C000C9A3F3 /* Build configuration list for PBXNativeTarget "WTMGlyphDemo" */;
+			buildPhases = (
+				42E359CB15A536C000C9A3F3 /* Sources */,
+				42E359CC15A536C000C9A3F3 /* Frameworks */,
+				42E359CD15A536C000C9A3F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTMGlyphDemo;
+			productName = WTMGlyphDemo;
+			productReference = 42E359CF15A536C000C9A3F3 /* WTMGlyphDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42E359C615A536C000C9A3F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "torin.nguyen@2359media.com";
+			};
+			buildConfigurationList = 42E359C915A536C000C9A3F3 /* Build configuration list for PBXProject "WTMGlyphDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42E359C415A536C000C9A3F3;
+			productRefGroup = 42E359D015A536C000C9A3F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42E359CE15A536C000C9A3F3 /* WTMGlyphDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42E359CD15A536C000C9A3F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E359DE15A536C000C9A3F3 /* InfoPlist.strings in Resources */,
+				42E359EA15A536C000C9A3F3 /* ViewController_iPhone.xib in Resources */,
+				42E359ED15A536C000C9A3F3 /* ViewController_iPad.xib in Resources */,
+				42E35A2815A5372500C9A3F3 /* D.json in Resources */,
+				42E35A3215A5372500C9A3F3 /* N.json in Resources */,
+				42E35A3415A5372500C9A3F3 /* P.json in Resources */,
+				42E35A3615A5372500C9A3F3 /* T.json in Resources */,
+				4249138615A5544E001F58DD /* circle.json in Resources */,
+				4249138815A5544E001F58DD /* square.json in Resources */,
+				4249138915A5544E001F58DD /* triangle.json in Resources */,
+				4249138A15A5544E001F58DD /* V.json in Resources */,
+				4249138B15A5544E001F58DD /* W.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42E359CB15A536C000C9A3F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E359E015A536C000C9A3F3 /* main.m in Sources */,
+				42E359E415A536C000C9A3F3 /* AppDelegate.m in Sources */,
+				42E359E715A536C000C9A3F3 /* ViewController.m in Sources */,
+				4249137A15A5422B001F58DD /* WTMGlyphDetectorView.m in Sources */,
+				42E35A2715A5372500C9A3F3 /* CDataScanner.m in Sources */,
+				42E35A2915A5372500C9A3F3 /* CFilteringJSONSerializer.m in Sources */,
+				42E35A2A15A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				42E35A2B15A5372500C9A3F3 /* CJSONSerialization.m in Sources */,
+				42E35A2C15A5372500C9A3F3 /* CJSONSerializedData.m in Sources */,
+				42E35A2D15A5372500C9A3F3 /* CDataScanner_Extensions.m in Sources */,
+				42E35A2E15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m in Sources */,
+				42E35A2F15A5372500C9A3F3 /* CJSONDeserializer.m in Sources */,
+				42E35A3015A5372500C9A3F3 /* CJSONScanner.m in Sources */,
+				42E35A3115A5372500C9A3F3 /* CJSONSerializer.m in Sources */,
+				42E35A3715A5372500C9A3F3 /* WTMGlyph.m in Sources */,
+				42E35A3815A5372500C9A3F3 /* WTMGlyphDefaults.m in Sources */,
+				42E35A3915A5372500C9A3F3 /* WTMGlyphDetector.m in Sources */,
+				42E35A3A15A5372500C9A3F3 /* WTMGlyphStroke.m in Sources */,
+				42E35A3B15A5372500C9A3F3 /* WTMGlyphTemplate.m in Sources */,
+				42E35A3C15A5372500C9A3F3 /* WTMGlyphUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		42E359DC15A536C000C9A3F3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E359DD15A536C000C9A3F3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		42E359E815A536C000C9A3F3 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E359E915A536C000C9A3F3 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		42E359EB15A536C000C9A3F3 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E359EC15A536C000C9A3F3 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42E359EE15A536C000C9A3F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42E359EF15A536C000C9A3F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42E359F115A536C000C9A3F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTMGlyphDemo/WTMGlyphDemo-Prefix.pch";
+				INFOPLIST_FILE = "WTMGlyphDemo/WTMGlyphDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		42E359F215A536C000C9A3F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTMGlyphDemo/WTMGlyphDemo-Prefix.pch";
+				INFOPLIST_FILE = "WTMGlyphDemo/WTMGlyphDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42E359C915A536C000C9A3F3 /* Build configuration list for PBXProject "WTMGlyphDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E359EE15A536C000C9A3F3 /* Debug */,
+				42E359EF15A536C000C9A3F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42E359F015A536C000C9A3F3 /* Build configuration list for PBXNativeTarget "WTMGlyphDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E359F115A536C000C9A3F3 /* Debug */,
+				42E359F215A536C000C9A3F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42E359C615A536C000C9A3F3 /* Project object */;
+}
