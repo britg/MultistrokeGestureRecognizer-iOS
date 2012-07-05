@@ -18,6 +18,7 @@
 
 @interface WTMGlyphDetectorView : UIView
 @property (nonatomic, strong) id delegate;
+@property (nonatomic, assign) BOOL enableDrawing;
 
 - (void)loadTemplatesWithNames:(NSString*)firstTemplate, ... NS_REQUIRES_NIL_TERMINATION;
 

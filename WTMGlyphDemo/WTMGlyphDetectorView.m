@@ -11,10 +11,13 @@
 @interface WTMGlyphDetectorView() <WTMGlyphDelegate>
 @property (nonatomic, strong) WTMGlyphDetector *glyphDetector;
 @property (nonatomic, strong) NSMutableArray *glyphNamesArray;
+@property (nonatomic, strong) UIBezierPath *myPath;
 @end
 
 @implementation WTMGlyphDetectorView
 @synthesize delegate;
+@synthesize myPath;
+@synthesize enableDrawing;
 @synthesize glyphDetector;
 @synthesize glyphNamesArray;
 
@@ -24,6 +27,14 @@
     self = [super initWithFrame:frame];
     if (self) {
       [self initGestureDetector];
+      
+      self.backgroundColor = [UIColor clearColor];
+      self.enableDrawing = YES;
+      
+      self.myPath = [[UIBezierPath alloc]init];
+      self.myPath.lineCapStyle = kCGLineCapRound;
+      self.myPath.miterLimit = 0;
+      self.myPath.lineWidth = 10;
     }
     return self;
 }
@@ -96,8 +107,14 @@
   //This is basically the content of resetIfTimeout
   BOOL hasTimeOut = [self.glyphDetector hasTimedOut];
   if (hasTimeOut) {
-    [self.glyphDetector reset];
     NSLog(@"Gesture detector reset");
+    [self.glyphDetector reset];
+    
+    if (self.enableDrawing) {
+      [self.myPath removeAllPoints];
+      //This is not recommended for production, but it's ok here since we don't have a lot to draw
+      [self setNeedsDisplay];
+    }
   }
   
   UITouch *touch = [touches anyObject];
@@ -105,6 +122,11 @@
   [self.glyphDetector addPoint:point];
 
   [super touchesBegan:touches withEvent:event];
+  
+  if (!self.enableDrawing)
+    return;
+  
+  [self.myPath moveToPoint:point];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -114,6 +136,14 @@
   [self.glyphDetector addPoint:point];
   
   [super touchesMoved:touches withEvent:event];
+  
+  if (!self.enableDrawing)
+    return;
+  
+  [self.myPath addLineToPoint:point];
+  
+  //This is not recommended for production, but it's ok here since we don't have a lot to draw
+  [self setNeedsDisplay];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -125,5 +155,18 @@
 
   [super touchesEnded:touches withEvent:event]; 
 }
+
+
+- (void)drawRect:(CGRect)rect
+{
+  [super drawRect:rect];
+  
+  if (!self.enableDrawing)
+    return;
+  
+  [[UIColor whiteColor] setStroke];
+  [self.myPath strokeWithBlendMode:kCGBlendModeNormal alpha:0.5];
+}
+
 
 @end
