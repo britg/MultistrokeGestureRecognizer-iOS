@@ -90,6 +90,8 @@
   //Simply forward it to my parent
   if ([self.delegate respondsToSelector:@selector(wtmGlyphDetectorView:glyphDetected:withScore:)])
     [self.delegate wtmGlyphDetectorView:self glyphDetected:glyph withScore:score];
+  
+  [self performSelector:@selector(clearDrawingIfTimeout) withObject:nil afterDelay:1.0f];
 }
 
 - (void)glyphResults:(NSArray *)results
@@ -168,5 +170,19 @@
   [self.myPath strokeWithBlendMode:kCGBlendModeNormal alpha:0.5];
 }
 
+- (void)clearDrawingIfTimeout
+{
+  if (!self.enableDrawing)
+    return;
+
+  BOOL hasTimeOut = [self.glyphDetector hasTimedOut];
+  if (!hasTimeOut)
+    return;
+  
+  [self.myPath removeAllPoints];
+  
+  //This is not recommended for production, but it's ok here since we don't have a lot to draw
+  [self setNeedsDisplay];
+}
 
 @end
