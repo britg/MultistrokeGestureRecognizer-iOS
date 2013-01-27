@@ -41,13 +41,13 @@
 }
 
 - (id)initWithGlyphs:(NSArray *)_glyphs {
-    [self init];
+    if (!(self = [self init])) return nil;
     self.glyphs = [NSMutableArray arrayWithArray:_glyphs];
     return self;
 }
 
 - (id)initWithDefaultGlyphs {
-    [self init];
+    if (!(self = [self init])) return nil;
     
     NSData *jsonData;
     NSArray *fileNames = [NSArray arrayWithObjects: @"D", @"T", @"N", @"P", nil];
@@ -63,12 +63,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [points release];
-    [glyphs release];
-    
-    [super dealloc];
-}
 
 #pragma mark - Glyph Templates
 
@@ -152,7 +146,7 @@
     }
     DebugLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
     
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO] autorelease];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
     NSArray *sortedResults = [results sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     
     [delegate glyphDetected:bestMatch withScore:highestScore];

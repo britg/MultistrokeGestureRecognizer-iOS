@@ -19,14 +19,6 @@
 @synthesize normalizedPoints;
 @synthesize vector;
 
-- (void)dealloc {
-    [name release];
-    [points release];
-    [normalizedPoints release];
-    [vector release];
-    
-    [super dealloc];
-}
 
 - (id)initWithName:(NSString *)_name points:(NSArray *)_points {
     if ((self = [super init])) {

@@ -64,18 +64,11 @@ inline static int HexToInt(char inCharacter)
     if ((self = [super init]) != NULL)
         {
         strictEscapeCodes = NO;
-        nullObject = [[NSNull null] retain];
+        nullObject = [NSNull null];
         }
     return(self);
     }
 
-- (void)dealloc
-    {
-    [nullObject release];
-    nullObject = NULL;
-    //
-    [super dealloc];
-    }
 
 #pragma mark -
 
@@ -108,7 +101,6 @@ inline static int HexToInt(char inCharacter)
             theString = [[NSString alloc] initWithData:theData encoding:self.allowedEncoding];
             }
         theData = [theString dataUsingEncoding:NSUTF8StringEncoding];
-        [theString release];
         }
 
     if (theData)
@@ -248,7 +240,6 @@ inline static int HexToInt(char inCharacter)
                 [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                 *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_DictionaryKeyScanFailed userInfo:theUserInfo];
                 }
-            [theDictionary release];
             return(NO);
             }
 
@@ -265,7 +256,6 @@ inline static int HexToInt(char inCharacter)
                 [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                 *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_DictionaryKeyNotTerminated userInfo:theUserInfo];
                 }
-            [theDictionary release];
             return(NO);
             }
 
@@ -282,7 +272,6 @@ inline static int HexToInt(char inCharacter)
                 [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                 *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_DictionaryValueScanFailed userInfo:theUserInfo];
                 }
-            [theDictionary release];
             return(NO);
             }
 
@@ -309,7 +298,6 @@ inline static int HexToInt(char inCharacter)
                     [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                     *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_DictionaryKeyValuePairNoDelimiter userInfo:theUserInfo];
                     }
-                [theDictionary release];
                 return(NO);
                 }
             break;
@@ -333,7 +321,6 @@ inline static int HexToInt(char inCharacter)
             [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
             *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_DictionaryNotTerminated userInfo:theUserInfo];
             }
-        [theDictionary release];
         return(NO);
         }
 
@@ -341,17 +328,15 @@ inline static int HexToInt(char inCharacter)
         {
         if (self.options & kJSONScannerOptions_MutableContainers)
             {
-            *outDictionary = [theDictionary autorelease];
+            *outDictionary = theDictionary;
             }
         else
             {
-            *outDictionary = [[theDictionary copy] autorelease];
-            [theDictionary release];
+            *outDictionary = [theDictionary copy];
             }
         }
     else
         {
-        [theDictionary release];
         }
 
     return(YES);
@@ -393,7 +378,6 @@ inline static int HexToInt(char inCharacter)
                 [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                 *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_ArrayValueScanFailed userInfo:theUserInfo];
                 }
-            [theArray release];
             return(NO);
             }
             
@@ -409,7 +393,6 @@ inline static int HexToInt(char inCharacter)
                     [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                     *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_ArrayValueIsNull userInfo:theUserInfo];
                     }
-                [theArray release];
                 return(NO);
                 }
             }
@@ -433,7 +416,6 @@ inline static int HexToInt(char inCharacter)
                     [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                     *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_ArrayNotTerminated userInfo:theUserInfo];
                     }
-                [theArray release];
                 return(NO);
                 }
             
@@ -455,7 +437,6 @@ inline static int HexToInt(char inCharacter)
             [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
             *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_ArrayNotTerminated userInfo:theUserInfo];
             }
-        [theArray release];
         return(NO);
         }
 
@@ -463,17 +444,15 @@ inline static int HexToInt(char inCharacter)
         {
         if (self.options & kJSONScannerOptions_MutableContainers)
             {
-            *outArray = [theArray autorelease];
+            *outArray = theArray;
             }
         else
             {
-            *outArray = [[theArray copy] autorelease];
-            [theArray release];
+            *outArray = [theArray copy];
             }
         }
     else
         {
-        [theArray release];
         }
     return(YES);
     }
@@ -497,7 +476,6 @@ inline static int HexToInt(char inCharacter)
             [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
             *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_StringNotStartedWithBackslash userInfo:theUserInfo];
             }
-        [theString release];
         return(NO);
         }
 
@@ -551,7 +529,6 @@ inline static int HexToInt(char inCharacter)
                                 [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                                 *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_StringUnicodeNotDecoded userInfo:theUserInfo];
                                 }
-                            [theString release];
                             return(NO);
                             }
                         theCharacter |= (theDigit << theShift);
@@ -571,7 +548,6 @@ inline static int HexToInt(char inCharacter)
                             [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                             *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_StringUnknownEscapeCode userInfo:theUserInfo];
                             }
-                        [theString release];
                         return(NO);
                         }
                     }
@@ -589,7 +565,6 @@ inline static int HexToInt(char inCharacter)
                 [theUserInfo addEntriesFromDictionary:self.userInfoForScanLocation];
                 *outError = [NSError errorWithDomain:kJSONScannerErrorDomain code:kJSONScannerErrorCode_StringNotTerminated userInfo:theUserInfo];
                 }
-            [theString release];
             return(NO);
             }
         }
@@ -598,17 +573,15 @@ inline static int HexToInt(char inCharacter)
         {
         if (self.options & kJSONScannerOptions_MutableLeaves)
             {
-            *outStringConstant = [theString autorelease];
+            *outStringConstant = theString;
             }
         else
             {
-            *outStringConstant = [[theString copy] autorelease];
-            [theString release];
+            *outStringConstant = [theString copy];
             }
         }
     else
         {
-        [theString release];
         }
 
     return(YES);
@@ -665,7 +638,7 @@ inline static int HexToInt(char inCharacter)
 
     if (outValue)
         {
-        *outValue = [[[NSString alloc] initWithBytes:current length:P - current encoding:NSUTF8StringEncoding] autorelease];
+        *outValue = [[NSString alloc] initWithBytes:current length:P - current encoding:NSUTF8StringEncoding];
         }
         
     current = P;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0448FFC916B4F48700E21FD8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0448FFC816B4F48700E21FD8 /* Default-568h@2x.png */; };
 		4249137A15A5422B001F58DD /* WTMGlyphDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */; };
 		4249138615A5544E001F58DD /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138015A5544E001F58DD /* circle.json */; };
 		4249138815A5544E001F58DD /* square.json in Resources */ = {isa = PBXBuildFile; fileRef = 4249138215A5544E001F58DD /* square.json */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0448FFC816B4F48700E21FD8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4249137815A5422B001F58DD /* WTMGlyphDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetectorView.h; sourceTree = "<group>"; };
 		4249137915A5422B001F58DD /* WTMGlyphDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetectorView.m; sourceTree = "<group>"; };
 		4249138015A5544E001F58DD /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		42E359C415A536C000C9A3F3 = {
 			isa = PBXGroup;
 			children = (
+				0448FFC816B4F48700E21FD8 /* Default-568h@2x.png */,
 				42E359FA15A5372500C9A3F3 /* WTMGlyph */,
 				42E359D915A536C000C9A3F3 /* WTMGlyphDemo */,
 				42E359D215A536C000C9A3F3 /* Frameworks */,
@@ -322,6 +325,7 @@
 				4249138915A5544E001F58DD /* triangle.json in Resources */,
 				4249138A15A5544E001F58DD /* V.json in Resources */,
 				4249138B15A5544E001F58DD /* W.json in Resources */,
+				0448FFC916B4F48700E21FD8 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
