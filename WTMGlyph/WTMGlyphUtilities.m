@@ -58,7 +58,7 @@ NSArray* Scale(NSArray *points, int resolution, float threshold) {
     NSMutableArray *scaled = [NSMutableArray array];
     
     CGRect bb = BoundingBox(points);
-    NSLog(@"Bounding box %@", [NSValue valueWithCGRect:bb]);
+    DebugLog(@"Bounding box %@", [NSValue valueWithCGRect:bb]);
     BOOL is1D = MIN(bb.size.width / bb.size.height, bb.size.height / bb.size.width) <= threshold;
     
     for (int i = 0; i < [points count]; i++) {
@@ -104,8 +104,8 @@ CGRect BoundingBox(NSArray *points) {
             maxY = pt.y;
     }
     
-    NSLog(@"minX %f", minX);
-    NSLog(@"minY %f", minY);
+    DebugLog(@"minX %f", minX);
+    DebugLog(@"minY %f", minY);
     
     return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
 }

@@ -42,7 +42,7 @@
     
     // Calculate indicative angle (radians)
 //    float radians = IndicativeAngle(resampled);
-//    NSLog(@"Indicative angle %f", radians);
+//    DebugLog(@"Indicative angle %f", radians);
     
     // Scale points to the desired resolution
     NSMutableArray *scaled = [NSMutableArray arrayWithArray:Scale(resampled, WTMGlyphResolution, WTMGlyph1DThreshold)];

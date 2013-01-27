@@ -33,9 +33,9 @@
 - (id)init 
 {
     if ((self = [super init])) {
-        points = [[NSMutableArray alloc] init];
-        glyphs = [[NSMutableArray alloc] init];
-        timeoutSeconds = WTMGlyphDefaultTimeoutSeconds;
+        self.points = [[NSMutableArray alloc] init];
+        self.glyphs = [[NSMutableArray alloc] init];
+        self.timeoutSeconds = WTMGlyphDefaultTimeoutSeconds;
         lastPointTime = [[NSDate date] timeIntervalSince1970];
     }
     return self;
@@ -144,7 +144,7 @@
     
     while ((glyph = (WTMGlyph *)[eachGlyph nextObject])) {
         float score = 1 / [glyph recognize:inputTemplate];
-        NSLog(@"Glyph: %@ Score: %f", glyph.name, score);
+        DebugLog(@"Glyph: %@ Score: %f", glyph.name, score);
         result = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:glyph.name, [NSNumber numberWithFloat:score], nil] 
                                              forKeys:[NSArray arrayWithObjects:@"name", @"score", nil]];
         [results addObject:result];
@@ -154,7 +154,7 @@
             bestMatch = glyph;
         }
     }
-    NSLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
+    DebugLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
     NSArray *sortedResults = [results sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
@@ -163,6 +163,12 @@
     d.allScores = sortedResults;
     d.bestMatch = bestMatch;
     d.bestScore = highestScore;
+    
+    if ([delegate respondsToSelector: @selector(glyphDetected:withScore:)])
+        [delegate glyphDetected:bestMatch withScore:highestScore];
+    if ([delegate respondsToSelector:@selector(glyphResults:)])
+        [delegate glyphResults:sortedResults];
+    
     return d;
 }
 
@@ -185,7 +191,7 @@
 
 - (void)detectIfTimedOut {
     if ([self hasTimedOut]) {
-        NSLog(@"Running detection");
+        DebugLog(@"Running detection");
         [self detectGlyph];
     }
 }
@@ -205,7 +211,7 @@
     
     DebugLog(@"Elapsed time since last point is: %i", elapsed);
     if (elapsed >= self.timeoutSeconds) {
-        NSLog(@"Timeout detected");
+        DebugLog(@"Timeout detected");
         return YES;
     }
     
