@@ -23,26 +23,27 @@
 		42E359E715A536C000C9A3F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359E615A536C000C9A3F3 /* ViewController.m */; };
 		42E359EA15A536C000C9A3F3 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E359E815A536C000C9A3F3 /* ViewController_iPhone.xib */; };
 		42E359ED15A536C000C9A3F3 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E359EB15A536C000C9A3F3 /* ViewController_iPad.xib */; };
-		42E35A2715A5372500C9A3F3 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359FC15A5372500C9A3F3 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2715A5372500C9A3F3 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E359FC15A5372500C9A3F3 /* CDataScanner.m */; };
 		42E35A2815A5372500C9A3F3 /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E359FD15A5372500C9A3F3 /* D.json */; };
-		42E35A2915A5372500C9A3F3 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0015A5372500C9A3F3 /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A2A15A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0215A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A2B15A5372500C9A3F3 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0415A5372500C9A3F3 /* CJSONSerialization.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A2C15A5372500C9A3F3 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0615A5372500C9A3F3 /* CJSONSerializedData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A2D15A5372500C9A3F3 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0915A5372500C9A3F3 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A2E15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0B15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A2F15A5372500C9A3F3 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0E15A5372500C9A3F3 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3015A5372500C9A3F3 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1015A5372500C9A3F3 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3115A5372500C9A3F3 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1215A5372500C9A3F3 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A2915A5372500C9A3F3 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0015A5372500C9A3F3 /* CFilteringJSONSerializer.m */; };
+		42E35A2A15A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0215A5372500C9A3F3 /* CJSONDeserializer_BlocksExtensions.m */; };
+		42E35A2B15A5372500C9A3F3 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0415A5372500C9A3F3 /* CJSONSerialization.m */; };
+		42E35A2C15A5372500C9A3F3 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0615A5372500C9A3F3 /* CJSONSerializedData.m */; };
+		42E35A2D15A5372500C9A3F3 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0915A5372500C9A3F3 /* CDataScanner_Extensions.m */; };
+		42E35A2E15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0B15A5372500C9A3F3 /* NSDictionary_JSONExtensions.m */; };
+		42E35A2F15A5372500C9A3F3 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A0E15A5372500C9A3F3 /* CJSONDeserializer.m */; };
+		42E35A3015A5372500C9A3F3 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1015A5372500C9A3F3 /* CJSONScanner.m */; };
+		42E35A3115A5372500C9A3F3 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1215A5372500C9A3F3 /* CJSONSerializer.m */; };
 		42E35A3215A5372500C9A3F3 /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E35A1415A5372500C9A3F3 /* N.json */; };
 		42E35A3415A5372500C9A3F3 /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E35A1615A5372500C9A3F3 /* P.json */; };
 		42E35A3615A5372500C9A3F3 /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 42E35A1815A5372500C9A3F3 /* T.json */; };
-		42E35A3715A5372500C9A3F3 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1B15A5372500C9A3F3 /* WTMGlyph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3815A5372500C9A3F3 /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1D15A5372500C9A3F3 /* WTMGlyphDefaults.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3915A5372500C9A3F3 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2015A5372500C9A3F3 /* WTMGlyphDetector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3A15A5372500C9A3F3 /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2215A5372500C9A3F3 /* WTMGlyphStroke.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3B15A5372500C9A3F3 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2415A5372500C9A3F3 /* WTMGlyphTemplate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		42E35A3C15A5372500C9A3F3 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2615A5372500C9A3F3 /* WTMGlyphUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42E35A3715A5372500C9A3F3 /* WTMGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1B15A5372500C9A3F3 /* WTMGlyph.m */; };
+		42E35A3815A5372500C9A3F3 /* WTMGlyphDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A1D15A5372500C9A3F3 /* WTMGlyphDefaults.m */; };
+		42E35A3915A5372500C9A3F3 /* WTMGlyphDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2015A5372500C9A3F3 /* WTMGlyphDetector.m */; };
+		42E35A3A15A5372500C9A3F3 /* WTMGlyphStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2215A5372500C9A3F3 /* WTMGlyphStroke.m */; };
+		42E35A3B15A5372500C9A3F3 /* WTMGlyphTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2415A5372500C9A3F3 /* WTMGlyphTemplate.m */; };
+		42E35A3C15A5372500C9A3F3 /* WTMGlyphUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E35A2615A5372500C9A3F3 /* WTMGlyphUtilities.m */; };
+		4305514416B5BED600F4214D /* WTMDetectionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4305514316B5BED600F4214D /* WTMDetectionResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		42E35A2415A5372500C9A3F3 /* WTMGlyphTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphTemplate.m; sourceTree = "<group>"; };
 		42E35A2515A5372500C9A3F3 /* WTMGlyphUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphUtilities.h; sourceTree = "<group>"; };
 		42E35A2615A5372500C9A3F3 /* WTMGlyphUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphUtilities.m; sourceTree = "<group>"; };
+		4305514216B5BED600F4214D /* WTMDetectionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMDetectionResult.h; sourceTree = "<group>"; };
+		4305514316B5BED600F4214D /* WTMDetectionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMDetectionResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				42E359FC15A5372500C9A3F3 /* CDataScanner.m */,
 				42E35A1A15A5372500C9A3F3 /* WTMGlyph.h */,
 				42E35A1B15A5372500C9A3F3 /* WTMGlyph.m */,
+				4305514216B5BED600F4214D /* WTMDetectionResult.h */,
+				4305514316B5BED600F4214D /* WTMDetectionResult.m */,
 				42E35A1C15A5372500C9A3F3 /* WTMGlyphDefaults.h */,
 				42E35A1D15A5372500C9A3F3 /* WTMGlyphDefaults.m */,
 				42E35A1E15A5372500C9A3F3 /* WTMGlyphDelegate.h */,
@@ -356,6 +361,7 @@
 				42E35A3A15A5372500C9A3F3 /* WTMGlyphStroke.m in Sources */,
 				42E35A3B15A5372500C9A3F3 /* WTMGlyphTemplate.m in Sources */,
 				42E35A3C15A5372500C9A3F3 /* WTMGlyphUtilities.m in Sources */,
+				4305514416B5BED600F4214D /* WTMDetectionResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "WTMGlyph.h"
 #import "WTMGlyphDelegate.h"
-
+#import "WTMDetectionResult.h"
 
 @interface WTMGlyphDetector : NSObject {
     
@@ -41,7 +41,9 @@
 - (void)addPoint:(CGPoint)point;
 - (void)removeAllPoints;
 - (void)removeAllGlyphs;
-- (void)detectGlyph;
+
+- (WTMDetectionResult*)detectGlyph;
+
 - (NSArray *)resample:(NSArray *)_points;
 - (NSArray *)translate:(NSArray *)_points;
 - (NSArray *)vectorize:(NSArray *)_points;
