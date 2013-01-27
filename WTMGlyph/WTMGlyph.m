@@ -20,7 +20,8 @@
 
 #pragma mark - Lifecycle
 
-- (void)dealloc {
+- (void)dealloc 
+{
     [name release];
     [strokes release];
     [strokeOrders release];
@@ -34,10 +35,11 @@
 - (id)init {
     if ((self = [super init])) {
         self.strokes = [NSMutableArray array];
-        strokeOrders = [NSMutableArray array];
-        permutedStrokeOrders = [NSMutableArray array];
-        unistrokes = [NSMutableArray array];
         self.templates = [NSMutableArray array];
+
+        strokeOrders = [[NSMutableArray alloc] init];
+        permutedStrokeOrders = [[NSMutableArray alloc] init];
+        unistrokes = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -71,8 +73,8 @@
     
     // actually create the templates from unistrokes
     for (int i = 0; i < [unistrokes count]; i++) {
-        WTMGlyphTemplate *newTemplate = [[WTMGlyphTemplate alloc] initWithName:self.name 
-                                                                        points:[unistrokes objectAtIndex:i]];
+        WTMGlyphTemplate *newTemplate = [[[WTMGlyphTemplate alloc] initWithName:self.name 
+                                                                        points:[unistrokes objectAtIndex:i]] autorelease];
         [self.templates addObject:newTemplate];
     }
     DebugLog(@"Templates %@", self.templates);
@@ -81,22 +83,20 @@
 
 - (void)createTemplatesFromJSONData:(NSData *)jsonData {
     NSError *error = nil;
-	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData
-                                                                  error:&error];
+	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData error:&error];
 	DebugLog(@"json data %@", arr);
     int i = 0;
     for (NSArray *strokePoints in arr) {
-        WTMGlyphStroke *stroke = [[WTMGlyphStroke alloc] init];
-		for (NSArray *pointArray in strokePoints) {
+        WTMGlyphStroke *stroke = [[[WTMGlyphStroke alloc] init] autorelease];
+		for (NSArray *pointArray in strokePoints)
             [stroke addPoint:CGPointMake([[pointArray objectAtIndex:0] floatValue], [[pointArray objectAtIndex:1] floatValue])];
-		}
-        DebugLog(@"Adding stroke to initial strokes %@", [stroke points]);
+		
         [self.strokes addObject:stroke];
         [strokeOrders addObject:[NSNumber numberWithInt:i]];
         i++;
 	}
     
-    DebugLog(@"Strokes %@", self.strokes);
+   DebugLog(@"Strokes %@", self.strokes);
     DebugLog(@"Initial stroke orders %@", strokeOrders);
 	
     [self createTemplates];
@@ -104,7 +104,7 @@
 
 - (void)permuteStrokeOrders:(int)count {
     if (count == 1) {
-        [permutedStrokeOrders addObject:[strokeOrders copy]];
+        [permutedStrokeOrders addObject: [[strokeOrders copy] autorelease]];
     } else {
         for (int i = 0; i < count; i++) {
             [self permuteStrokeOrders:(count-1)];
@@ -143,7 +143,7 @@
                 
                 int strokeIndex = [[strokeOrder objectAtIndex:i] intValue];
                 stroke = [self.strokes objectAtIndex:strokeIndex];
-                copyOfStrokePoints = [NSMutableArray arrayWithArray:[[stroke points] copy]];
+                copyOfStrokePoints = [NSMutableArray arrayWithArray: [[[stroke points] copy] autorelease]];
                 
                 if (((b >> i) & 1) == 1) {
                     points = [[copyOfStrokePoints reverseObjectEnumerator] allObjects];

@@ -20,21 +20,24 @@
 
 #pragma mark - Lifecycle
 
-+ (id)detector {
-    WTMGlyphDetector *detector = [[WTMGlyphDetector alloc] init];
++ (id)detector 
+{
+    WTMGlyphDetector *detector = [[[WTMGlyphDetector alloc] init] autorelease];
     return detector;
 }
 
-+ (id)defaultDetector {
-    WTMGlyphDetector *detector = [[WTMGlyphDetector alloc] initWithDefaultGlyphs];
++ (id)defaultDetector 
+{
+    WTMGlyphDetector *detector = [[[WTMGlyphDetector alloc] initWithDefaultGlyphs] autorelease];
     return detector;
 }
 
-- (id)init {
+- (id)init 
+{
     if ((self = [super init])) {
-        self.points = [[NSMutableArray alloc] init];
-        self.glyphs = [[NSMutableArray alloc] init];
-        self.timeoutSeconds = WTMGlyphDefaultTimeoutSeconds;
+        points = [[NSMutableArray alloc] init];
+        glyphs = [[NSMutableArray alloc] init];
+        timeoutSeconds = WTMGlyphDefaultTimeoutSeconds;
         lastPointTime = [[NSDate date] timeIntervalSince1970];
     }
     return self;
@@ -46,7 +49,8 @@
     return self;
 }
 
-- (id)initWithDefaultGlyphs {
+- (id)initWithDefaultGlyphs 
+{
     [self init];
     
     NSData *jsonData;
@@ -54,16 +58,19 @@
 
     for (int i = 0; i < fileNames.count; i++) {
         NSString *name = [fileNames objectAtIndex:i];
+        NSAutoreleasePool * p = [[NSAutoreleasePool alloc] init];
         jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"]];        
         if (jsonData) {
             [self addGlyphFromJSON:jsonData name:name];
         }
+        [p release];
     }
     
     return self;
 }
 
-- (void)dealloc {
+- (void)dealloc 
+{
     [points release];
     [glyphs release];
     
@@ -72,7 +79,8 @@
 
 #pragma mark - Glyph Templates
 
-- (void)addGlyph:(WTMGlyph *)glyph {
+- (void)addGlyph:(WTMGlyph *)glyph 
+{
     if (!self.glyphs)
         self.glyphs = [NSMutableArray arrayWithCapacity:1];
 
@@ -80,12 +88,15 @@
 }
 
 
-- (void)addGlyphFromJSON:(NSData *)jsonData name:(NSString *)name {
+- (void)addGlyphFromJSON:(NSData *)jsonData name:(NSString *)name 
+{
     WTMGlyph *t = [[WTMGlyph alloc] initWithName:name JSONData:jsonData];
     [self addGlyph:t];
+    [t release];
 }
 
-- (void)removeGlyphByName:(NSString *)name {
+- (void)removeGlyphByName:(NSString *)name 
+{
     NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
     WTMGlyph *glyph;
     
@@ -96,7 +107,8 @@
     }
 }
 
-- (void)removeAllGlyphs {
+- (void)removeAllGlyphs 
+{
     [self.glyphs removeAllObjects];
 }
 
@@ -104,7 +116,7 @@
 #pragma mark - Detection
 
 - (void)addPoint:(CGPoint)point {
-    //DebugLog(@"Adding point to detector: %@", [NSValue valueWithCGPoint:point]);
+    DebugLog(@"Adding point to detector: %@", [NSValue valueWithCGPoint:point]);
     
     lastPointTime = [[NSDate date] timeIntervalSince1970];
     
@@ -115,22 +127,27 @@
     [self.points removeAllObjects];
 }
 
-- (void)detectGlyph {
+- (WTMDetectionResult*)detectGlyph {
     
     // Take the captured points and make a Template
     // Compare the template against existing templates and find the best match.
     // If the best match is within a threshold, consider it a true match.
-    
+    WTMDetectionResult * d = [[WTMDetectionResult alloc] init];
+    d.allScores = nil;
+    d.bestMatch = nil;
+
     if (![self hasEnoughPoints]) {
-        return;
+        d.success = NO;
+        return d;
     }
     
     if (self.glyphs.count < 1) {
-        return;
+        d.success = NO;
+        return d;
     }
     
-    WTMGlyphTemplate *inputTemplate = [[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points];
-    WTMGlyph *glyph;
+    WTMGlyphTemplate *inputTemplate = [[[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points] autorelease];
+    WTMGlyph *glyph = nil;
     NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
     WTMGlyph *bestMatch;
     float highestScore = 0;
@@ -140,7 +157,7 @@
     
     while ((glyph = (WTMGlyph *)[eachGlyph nextObject])) {
         float score = 1 / [glyph recognize:inputTemplate];
-        DebugLog(@"Glyph: %@ Score: %f", glyph.name, score);
+        NSLog(@"Glyph: %@ Score: %f", glyph.name, score);
         result = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:glyph.name, [NSNumber numberWithFloat:score], nil] 
                                              forKeys:[NSArray arrayWithObjects:@"name", @"score", nil]];
         [results addObject:result];
@@ -150,13 +167,16 @@
             bestMatch = glyph;
         }
     }
-    DebugLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
+    NSLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
     
     NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO] autorelease];
     NSArray *sortedResults = [results sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     
-    [delegate glyphDetected:bestMatch withScore:highestScore];
-    [delegate glyphResults:sortedResults];
+    d.success = YES;
+    d.allScores = sortedResults;
+    d.bestMatch = bestMatch;
+    d.bestScore = highestScore;
+    return d;
 }
 
 - (NSArray *)resample:(NSArray *)_points {
@@ -178,7 +198,7 @@
 
 - (void)detectIfTimedOut {
     if ([self hasTimedOut]) {
-        DebugLog(@"Running detection");
+        NSLog(@"Running detection");
         [self detectGlyph];
     }
 }
@@ -196,9 +216,9 @@
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     NSInteger elapsed = now - lastPointTime;
     
-    //DebugLog(@"Elapsed time since last point is: %i", elapsed);
+    DebugLog(@"Elapsed time since last point is: %i", elapsed);
     if (elapsed >= self.timeoutSeconds) {
-        DebugLog(@"Timeout detected");
+        NSLog(@"Timeout detected");
         return YES;
     }
     

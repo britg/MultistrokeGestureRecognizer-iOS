@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+typedef struct FloatArrayContainer {
+    float * items;
+    int itemCount;
+    int allocatedCount;
+} FloatArrayContainer;
+
 NSArray* Resample(NSArray *points, int num);
 NSArray* Scale(NSArray *points, int resolution, float threshold);
 CGRect BoundingBox(NSArray *points);
@@ -17,5 +25,5 @@ float Distance(CGPoint point1, CGPoint point2);
 float IndicativeAngle(NSArray *points);
 NSArray* TranslateToOrigin(NSArray *points);
 CGPoint CalcStartUnitVector(NSArray *points, int count);
-NSArray* Vectorize(NSArray *points);
-float OptimalCosineDistance(NSArray *v1, NSArray *v2);
+FloatArrayContainer Vectorize(NSArray *points);
+float OptimalCosineDistance(FloatArrayContainer v1, FloatArrayContainer v2);

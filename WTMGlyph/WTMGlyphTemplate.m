@@ -10,7 +10,7 @@
 
 #import "WTMGlyphTemplate.h"
 #import "WTMGlyphUtilities.h"
-
+#import "WTMGlyphDefaults.h"
 
 @implementation WTMGlyphTemplate
 
@@ -23,7 +23,7 @@
     [name release];
     [points release];
     [normalizedPoints release];
-    [vector release];
+    free(vector.items);
     
     [super dealloc];
 }
@@ -42,19 +42,19 @@
     
     // Resample the points
     NSMutableArray *resampled = [NSMutableArray arrayWithArray:Resample(self.points, WTMGlyphResamplePointsCount)];
-    //DebugLog(@"Resampled points %@", resampled);
+    DebugLog(@"Resampled points %@", resampled);
     
     // Calculate indicative angle (radians)
 //    float radians = IndicativeAngle(resampled);
-//    DebugLog(@"Indicative angle %f", radians);
+//    NSLog(@"Indicative angle %f", radians);
     
     // Scale points to the desired resolution
     NSMutableArray *scaled = [NSMutableArray arrayWithArray:Scale(resampled, WTMGlyphResolution, WTMGlyph1DThreshold)];
-    //DebugLog(@"Scaled points %@", scaled);
+    DebugLog(@"Scaled points %@", scaled);
     
     // Translate points to 0,0
     NSMutableArray *translated = [NSMutableArray arrayWithArray:TranslateToOrigin(scaled)];
-    //DebugLog(@"Translated points %@", translated);
+    DebugLog(@"Translated points %@", translated);
     
     self.normalizedPoints = translated;
     
@@ -62,8 +62,7 @@
     startUnitVector = CalcStartUnitVector(translated, WTMGlyphStartAngleIndex);
     
     // Vectorize
-    self.vector = [NSMutableArray arrayWithArray:Vectorize(self.normalizedPoints)];
-    //DebugLog(@"Vector %@", self.vector);
+    self.vector = Vectorize(self.normalizedPoints);
 }
 
 
