@@ -17,10 +17,10 @@
     NSMutableArray *vector;
 }
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSMutableArray *points;
-@property (nonatomic, retain) NSMutableArray *normalizedPoints;
-@property (nonatomic, retain) NSMutableArray *vector;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableArray *points;
+@property (nonatomic, strong) NSMutableArray *normalizedPoints;
+@property (nonatomic, strong) NSMutableArray *vector;
 
 - (id)initWithName:(NSString *)_name points:(NSArray *)_points;
 - (void)normalize;

@@ -13,7 +13,7 @@
     NSMutableArray *points;
 }
 
-@property (nonatomic, retain) NSMutableArray *points;
+@property (nonatomic, strong) NSMutableArray *points;
 
 - (id)initWithPoints:(NSArray *)_points;
 - (void)addPoint:(CGPoint)point;

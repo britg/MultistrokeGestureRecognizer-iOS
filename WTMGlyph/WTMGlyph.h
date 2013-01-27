@@ -21,9 +21,9 @@
     WTMGlyphStroke *currentStroke;
 }
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSMutableArray *strokes;
-@property (nonatomic, retain) NSMutableArray *templates;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableArray *strokes;
+@property (nonatomic, strong) NSMutableArray *templates;
 
 - (id)init;
 - (id)initWithName:(NSString *)_name strokes:(NSArray *)strokes;
