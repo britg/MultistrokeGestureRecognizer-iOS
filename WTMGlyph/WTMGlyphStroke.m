@@ -12,11 +12,6 @@
 @implementation WTMGlyphStroke
 @synthesize points;
 
-- (void)dealloc {
-    [points release];
-    
-    [super dealloc];
-}
 
 - (id)initWithPoints:(NSArray *)_points {
     if ((self = [super init])) {

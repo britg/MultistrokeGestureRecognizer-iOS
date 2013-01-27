@@ -20,16 +20,6 @@
 
 #pragma mark - Lifecycle
 
-- (void)dealloc {
-    [name release];
-    [strokes release];
-    [strokeOrders release];
-    [permutedStrokeOrders release];
-    [unistrokes release];
-    [templates release];
-    
-    [super dealloc];
-}
 
 - (id)init {
     if ((self = [super init])) {
@@ -43,14 +33,14 @@
 }
 
 - (id)initWithName:(NSString *)_name strokes:(NSMutableArray *)_strokes {
-    [self init];
+    if (!(self = [self init])) return nil;
     self.name = _name;
     [self createTemplates];
     return self;
 }
 
 - (id)initWithName:(NSString *)_name JSONData:(NSData *)jsonData {
-    [self init];
+    if (!(self = [self init])) return nil;
     self.name = _name;
     [self createTemplatesFromJSONData:jsonData];
     return self;
