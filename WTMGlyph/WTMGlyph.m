@@ -20,20 +20,9 @@
 
 #pragma mark - Lifecycle
 
-- (void)dealloc 
-{
-    [name release];
-    [strokes release];
-    [strokeOrders release];
-    [permutedStrokeOrders release];
-    [unistrokes release];
-    [templates release];
-    
-    [super dealloc];
-}
-
 - (id)init {
-    if ((self = [super init])) {
+    self = [super init];
+    if (self) {
         self.strokes = [NSMutableArray array];
         self.templates = [NSMutableArray array];
 
@@ -45,14 +34,14 @@
 }
 
 - (id)initWithName:(NSString *)_name strokes:(NSMutableArray *)_strokes {
-    [self init];
+    if (!(self = [self init])) return nil;
     self.name = _name;
     [self createTemplates];
     return self;
 }
 
 - (id)initWithName:(NSString *)_name JSONData:(NSData *)jsonData {
-    [self init];
+    if (!(self = [self init])) return nil;
     self.name = _name;
     [self createTemplatesFromJSONData:jsonData];
     return self;
@@ -73,8 +62,8 @@
     
     // actually create the templates from unistrokes
     for (int i = 0; i < [unistrokes count]; i++) {
-        WTMGlyphTemplate *newTemplate = [[[WTMGlyphTemplate alloc] initWithName:self.name 
-                                                                        points:[unistrokes objectAtIndex:i]] autorelease];
+        WTMGlyphTemplate *newTemplate = [[WTMGlyphTemplate alloc] initWithName:self.name 
+                                                                        points:[unistrokes objectAtIndex:i]];
         [self.templates addObject:newTemplate];
     }
     DebugLog(@"Templates %@", self.templates);
@@ -87,7 +76,7 @@
 	DebugLog(@"json data %@", arr);
     int i = 0;
     for (NSArray *strokePoints in arr) {
-        WTMGlyphStroke *stroke = [[[WTMGlyphStroke alloc] init] autorelease];
+        WTMGlyphStroke *stroke = [[WTMGlyphStroke alloc] init];
 		for (NSArray *pointArray in strokePoints)
             [stroke addPoint:CGPointMake([[pointArray objectAtIndex:0] floatValue], [[pointArray objectAtIndex:1] floatValue])];
 		
@@ -104,7 +93,7 @@
 
 - (void)permuteStrokeOrders:(int)count {
     if (count == 1) {
-        [permutedStrokeOrders addObject: [[strokeOrders copy] autorelease]];
+        [permutedStrokeOrders addObject: [strokeOrders copy]];
     } else {
         for (int i = 0; i < count; i++) {
             [self permuteStrokeOrders:(count-1)];
@@ -143,7 +132,7 @@
                 
                 int strokeIndex = [[strokeOrder objectAtIndex:i] intValue];
                 stroke = [self.strokes objectAtIndex:strokeIndex];
-                copyOfStrokePoints = [NSMutableArray arrayWithArray: [[[stroke points] copy] autorelease]];
+                copyOfStrokePoints = [NSMutableArray arrayWithArray: [[stroke points] copy]];
                 
                 if (((b >> i) & 1) == 1) {
                     points = [[copyOfStrokePoints reverseObjectEnumerator] allObjects];

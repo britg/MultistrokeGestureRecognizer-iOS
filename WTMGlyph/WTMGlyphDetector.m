@@ -22,14 +22,12 @@
 
 + (id)detector 
 {
-    WTMGlyphDetector *detector = [[[WTMGlyphDetector alloc] init] autorelease];
-    return detector;
+    return [[WTMGlyphDetector alloc] init];
 }
 
 + (id)defaultDetector 
 {
-    WTMGlyphDetector *detector = [[[WTMGlyphDetector alloc] initWithDefaultGlyphs] autorelease];
-    return detector;
+    return [[WTMGlyphDetector alloc] initWithDefaultGlyphs];
 }
 
 - (id)init 
@@ -44,38 +42,28 @@
 }
 
 - (id)initWithGlyphs:(NSArray *)_glyphs {
-    [self init];
+    if (!(self = [self init])) return nil;
     self.glyphs = [NSMutableArray arrayWithArray:_glyphs];
     return self;
 }
 
-- (id)initWithDefaultGlyphs 
-{
-    [self init];
-    
-    NSData *jsonData;
-    NSArray *fileNames = [NSArray arrayWithObjects: @"D", @"T", @"N", @"P", nil];
+- (id)initWithDefaultGlyphs {
+    self = [self init];
+    if (self) {
+        NSData *jsonData;
+        NSArray *fileNames = [NSArray arrayWithObjects: @"D", @"T", @"N", @"P", nil];
 
-    for (int i = 0; i < fileNames.count; i++) {
-        NSString *name = [fileNames objectAtIndex:i];
-        NSAutoreleasePool * p = [[NSAutoreleasePool alloc] init];
-        jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"]];        
-        if (jsonData) {
-            [self addGlyphFromJSON:jsonData name:name];
+        for (int i = 0; i < fileNames.count; i++) {
+            NSString *name = [fileNames objectAtIndex:i];
+            jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"]];        
+            if (jsonData) {
+                [self addGlyphFromJSON:jsonData name:name];
+            }
         }
-        [p release];
     }
-    
     return self;
 }
 
-- (void)dealloc 
-{
-    [points release];
-    [glyphs release];
-    
-    [super dealloc];
-}
 
 #pragma mark - Glyph Templates
 
@@ -92,7 +80,6 @@
 {
     WTMGlyph *t = [[WTMGlyph alloc] initWithName:name JSONData:jsonData];
     [self addGlyph:t];
-    [t release];
 }
 
 - (void)removeGlyphByName:(NSString *)name 
@@ -146,7 +133,7 @@
         return d;
     }
     
-    WTMGlyphTemplate *inputTemplate = [[[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points] autorelease];
+    WTMGlyphTemplate *inputTemplate = [[WTMGlyphTemplate alloc] initWithName:@"Input" points:self.points];
     WTMGlyph *glyph = nil;
     NSEnumerator *eachGlyph = [self.glyphs objectEnumerator];
     WTMGlyph *bestMatch;
@@ -169,7 +156,7 @@
     }
     NSLog(@"Best Glyph: %@ with a Score of: %f", bestMatch.name, highestScore);
     
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO] autorelease];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score" ascending:NO];
     NSArray *sortedResults = [results sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     
     d.success = YES;

@@ -13,7 +13,7 @@
 
 @interface WTMGlyphDetector : NSObject {
     
-    id<WTMGlyphDelegate> delegate;
+    id<WTMGlyphDelegate> __unsafe_unretained delegate;
     
     NSMutableArray *points;
     NSMutableArray *glyphs;
@@ -23,9 +23,9 @@
     
 }
 
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) NSMutableArray *points;
-@property (nonatomic, assign) NSMutableArray *glyphs;
+@property (nonatomic, unsafe_unretained) id delegate;
+@property (nonatomic, strong) NSMutableArray *points;
+@property (nonatomic, strong) NSMutableArray *glyphs;
 @property (nonatomic, assign) NSInteger timeoutSeconds;
 
 + (id)detector;
