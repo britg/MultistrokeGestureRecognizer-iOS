@@ -7,20 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "WTMGlyphUtilities.h"
 
 @interface WTMGlyphTemplate : NSObject {
     NSString *name;
     NSMutableArray *points;
     NSMutableArray *normalizedPoints;
     CGPoint startUnitVector;
-    NSMutableArray *vector;
+    FloatArrayContainer vector;
 }
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSMutableArray *points;
-@property (nonatomic, strong) NSMutableArray *normalizedPoints;
-@property (nonatomic, strong) NSMutableArray *vector;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSMutableArray *points;
+@property (nonatomic, retain) NSMutableArray *normalizedPoints;
+@property (nonatomic, assign) FloatArrayContainer vector;
 
 - (id)initWithName:(NSString *)_name points:(NSArray *)_points;
 - (void)normalize;

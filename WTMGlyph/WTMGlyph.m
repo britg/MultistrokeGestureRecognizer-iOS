@@ -20,14 +20,15 @@
 
 #pragma mark - Lifecycle
 
-
 - (id)init {
-    if ((self = [super init])) {
+    self = [super init];
+    if (self) {
         self.strokes = [NSMutableArray array];
-        strokeOrders = [NSMutableArray array];
-        permutedStrokeOrders = [NSMutableArray array];
-        unistrokes = [NSMutableArray array];
         self.templates = [NSMutableArray array];
+
+        strokeOrders = [[NSMutableArray alloc] init];
+        permutedStrokeOrders = [[NSMutableArray alloc] init];
+        unistrokes = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -71,22 +72,20 @@
 
 - (void)createTemplatesFromJSONData:(NSData *)jsonData {
     NSError *error = nil;
-	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData
-                                                                  error:&error];
+	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData error:&error];
 	DebugLog(@"json data %@", arr);
     int i = 0;
     for (NSArray *strokePoints in arr) {
         WTMGlyphStroke *stroke = [[WTMGlyphStroke alloc] init];
-		for (NSArray *pointArray in strokePoints) {
+		for (NSArray *pointArray in strokePoints)
             [stroke addPoint:CGPointMake([[pointArray objectAtIndex:0] floatValue], [[pointArray objectAtIndex:1] floatValue])];
-		}
-        DebugLog(@"Adding stroke to initial strokes %@", [stroke points]);
+		
         [self.strokes addObject:stroke];
         [strokeOrders addObject:[NSNumber numberWithInt:i]];
         i++;
 	}
     
-    DebugLog(@"Strokes %@", self.strokes);
+   DebugLog(@"Strokes %@", self.strokes);
     DebugLog(@"Initial stroke orders %@", strokeOrders);
 	
     [self createTemplates];
@@ -94,7 +93,7 @@
 
 - (void)permuteStrokeOrders:(int)count {
     if (count == 1) {
-        [permutedStrokeOrders addObject:[strokeOrders copy]];
+        [permutedStrokeOrders addObject: [strokeOrders copy]];
     } else {
         for (int i = 0; i < count; i++) {
             [self permuteStrokeOrders:(count-1)];
@@ -133,7 +132,7 @@
                 
                 int strokeIndex = [[strokeOrder objectAtIndex:i] intValue];
                 stroke = [self.strokes objectAtIndex:strokeIndex];
-                copyOfStrokePoints = [NSMutableArray arrayWithArray:[[stroke points] copy]];
+                copyOfStrokePoints = [NSMutableArray arrayWithArray: [[stroke points] copy]];
                 
                 if (((b >> i) & 1) == 1) {
                     points = [[copyOfStrokePoints reverseObjectEnumerator] allObjects];

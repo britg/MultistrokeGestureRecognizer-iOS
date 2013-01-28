@@ -58,7 +58,7 @@ NSArray* Scale(NSArray *points, int resolution, float threshold) {
     NSMutableArray *scaled = [NSMutableArray array];
     
     CGRect bb = BoundingBox(points);
-    NSLog(@"Bounding box %@", [NSValue valueWithCGRect:bb]);
+    
     BOOL is1D = MIN(bb.size.width / bb.size.height, bb.size.height / bb.size.width) <= threshold;
     
     for (int i = 0; i < [points count]; i++) {
@@ -103,9 +103,6 @@ CGRect BoundingBox(NSArray *points) {
         if( pt.y > maxY )
             maxY = pt.y;
     }
-    
-    NSLog(@"minX %f", minX);
-    NSLog(@"minY %f", minY);
     
     return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
 }
@@ -202,8 +199,11 @@ CGPoint CalcStartUnitVector(NSArray *points, int count) {
     return CGPointMake((v.x / len), (v.y / len));
 }
 
-NSArray* Vectorize(NSArray *points) {
-    NSMutableArray *vector = [NSMutableArray array];
+FloatArrayContainer Vectorize(NSArray *points) {
+    FloatArrayContainer v;
+    v.itemCount = 0;
+    v.allocatedCount = [points count] * 2 + 1;
+    v.items = malloc(v.allocatedCount * sizeof(float));
     
     float cos = 1.0;
     float sin = 0.0;
@@ -214,41 +214,30 @@ NSArray* Vectorize(NSArray *points) {
         point = [[points objectAtIndex:i] CGPointValue];
         float newX = point.x * cos - point.y * sin;
         float newY = point.y * cos + point.x * sin;
-        [vector addObject:[NSNumber numberWithFloat:newX]];
-        [vector addObject:[NSNumber numberWithFloat:newY]];
+        v.items[i*2] = newX;
+        v.items[i*2 + 1] = newY;
+        v.itemCount += 2;
         sum += newX * newX + newY * newY;
     }
     
     float magnitude = sqrtf(sum);
-    for (int i = 0; i < [vector count]; i++) {
-        NSNumber *val = [vector objectAtIndex:i];
-        float scaled = [val floatValue] / magnitude;
-        [vector replaceObjectAtIndex:i withObject:[NSNumber numberWithFloat:scaled]];
-    }
+    for (int i = 0; i < v.itemCount; i++)
+        v.items[i] /= magnitude;
     
-    return vector;
+    return v;
 }
 
-float OptimalCosineDistance(NSArray *v1, NSArray *v2) {
+float OptimalCosineDistance(FloatArrayContainer v1, FloatArrayContainer v2) {
     float a = 0.0;
     float b = 0.0;
-    float v1i;
-    float v2i;
-    float v1next;
-    float v2next;
     float angle;
     float score;
     
-    int mincount = (v1.count < v2.count ? v1.count : v2.count);
+    int mincount = (v1.itemCount < v2.itemCount ? v1.itemCount : v2.itemCount);
     
-    for (int i = 0; i < mincount; i+=2) {
-        v1i = [[v1 objectAtIndex:i] floatValue];
-        v2i = [[v2 objectAtIndex:i] floatValue];
-        v1next = [[v1 objectAtIndex:(i+1)] floatValue];
-        v2next = [[v2 objectAtIndex:(i+1)] floatValue];
-        
-        a += v1i * v2i + v1next * v2next;
-        b += v1i * v2next + v1next * v2i;
+    for (int ii = 0; ii < mincount; ii+=2) {
+        a += v1.items[ii] * v2.items[ii] + v1.items[ii+1] * v2.items[ii+1];
+        b += v1.items[ii] * v2.items[ii+1] + v1.items[ii+1] * v2.items[ii];
     }
     
     angle = atanf( b / a );
