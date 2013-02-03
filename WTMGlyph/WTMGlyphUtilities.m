@@ -237,7 +237,7 @@ float OptimalCosineDistance(FloatArrayContainer v1, FloatArrayContainer v2) {
     
     for (int ii = 0; ii < mincount; ii+=2) {
         a += v1.items[ii] * v2.items[ii] + v1.items[ii+1] * v2.items[ii+1];
-        b += v1.items[ii] * v2.items[ii+1] + v1.items[ii+1] * v2.items[ii];
+        b += v1.items[ii] * v2.items[ii+1] - v1.items[ii+1] * v2.items[ii];
     }
     
     angle = atanf( b / a );
