@@ -12,5 +12,6 @@ build/
 *.mode2v3
 
 xcuserdata
+*.xccheckout
 
 /DerivedData/
