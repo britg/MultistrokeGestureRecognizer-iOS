@@ -78,12 +78,6 @@ inline static unichar CharacterAtPointer(void *start, void *end)
         }
     }
 
-- (void)dealloc
-    {
-    data = NULL;
-    //
-    }
-
 - (NSUInteger)scanLocation
     {
     return(current - start);

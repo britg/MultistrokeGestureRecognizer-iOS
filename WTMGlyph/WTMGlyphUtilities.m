@@ -107,9 +107,9 @@ CGRect BoundingBox(NSArray *points) {
     return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
 }
 
-NSMutableArray* Splice(NSMutableArray *original, id newVal, int i) {
+NSMutableArray* Splice(NSMutableArray *original, id newVal, NSUInteger i) {
     NSArray *frontSlice = [original subarrayWithRange:NSMakeRange(0, i)];
-    int len = original.count-i;
+    NSUInteger len = original.count-i;
     NSArray *backSlice = [original subarrayWithRange:NSMakeRange(i, len)];
     
     NSMutableArray *spliced = [NSMutableArray arrayWithArray:frontSlice];
@@ -233,7 +233,7 @@ float OptimalCosineDistance(FloatArrayContainer v1, FloatArrayContainer v2) {
     float angle;
     float score;
     
-    int mincount = (v1.itemCount < v2.itemCount ? v1.itemCount : v2.itemCount);
+    NSUInteger mincount = (v1.itemCount < v2.itemCount ? v1.itemCount : v2.itemCount);
     
     for (int ii = 0; ii < mincount; ii+=2) {
         a += v1.items[ii] * v2.items[ii] + v1.items[ii+1] * v2.items[ii+1];
