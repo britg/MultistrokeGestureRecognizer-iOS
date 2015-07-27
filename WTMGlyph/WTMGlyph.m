@@ -26,9 +26,9 @@
         self.strokes = [NSMutableArray array];
         self.templates = [NSMutableArray array];
 
-        strokeOrders = [[NSMutableArray alloc] init];
-        permutedStrokeOrders = [[NSMutableArray alloc] init];
-        unistrokes = [[NSMutableArray alloc] init];
+        strokeOrders = [NSMutableArray array];
+        permutedStrokeOrders = [NSMutableArray array];
+        unistrokes = [NSMutableArray array];
     }
     return self;
 }
@@ -61,9 +61,9 @@
     DebugLog(@"Unistrokes %@", unistrokes);
     
     // actually create the templates from unistrokes
-    for (int i = 0; i < [unistrokes count]; i++) {
-        WTMGlyphTemplate *newTemplate = [[WTMGlyphTemplate alloc] initWithName:self.name 
-                                                                        points:[unistrokes objectAtIndex:i]];
+    for (NSArray *unistroke in unistrokes) {
+        WTMGlyphTemplate *newTemplate = [[WTMGlyphTemplate alloc] initWithName:self.name
+                                                                        points:unistroke];
         [self.templates addObject:newTemplate];
     }
     DebugLog(@"Templates %@", self.templates);
@@ -114,26 +114,19 @@
 
 // Create a unistroke for each stroke order permutation
 - (void)createUnistrokes {
-    NSArray *points;
-    NSMutableArray *unistroke;
-    NSMutableArray *strokeOrder;
-    WTMGlyphStroke *stroke;
-    NSMutableArray *copyOfStrokePoints;
-    
-    for (int r = 0; r < [permutedStrokeOrders count]; r++) {
-        
-        strokeOrder = [permutedStrokeOrders objectAtIndex:r];
-        
+    for (NSMutableArray *strokeOrder in permutedStrokeOrders) {
+
         for (int b = 0; b < pow(2, [strokeOrder count]); b++) {
             
-            unistroke = [NSMutableArray array];
+            NSMutableArray *unistroke = [NSMutableArray array];
             
             for (int i = 0; i < [strokeOrders count]; i++) {
                 
                 int strokeIndex = [[strokeOrder objectAtIndex:i] intValue];
-                stroke = [self.strokes objectAtIndex:strokeIndex];
-                copyOfStrokePoints = [NSMutableArray arrayWithArray: [[stroke points] copy]];
-                
+                WTMGlyphStroke *stroke = [self.strokes objectAtIndex:strokeIndex];
+                NSMutableArray *copyOfStrokePoints = [NSMutableArray arrayWithArray: [[stroke points] copy]];
+
+                NSArray *points;
                 if (((b >> i) & 1) == 1) {
                     points = [[copyOfStrokePoints reverseObjectEnumerator] allObjects];
                 } else {
@@ -158,8 +151,7 @@
     float lowestDistance = FLT_MAX;
     float distance = FLT_MAX;
     
-    for (int i = 0; i < [self.templates count]; i++) {
-        WTMGlyphTemplate *template = [self.templates objectAtIndex:i];
+    for (WTMGlyphTemplate *template in self.templates) {
         distance = OptimalCosineDistance(template.vector, input.vector);
         
         if (distance < lowestDistance) {
