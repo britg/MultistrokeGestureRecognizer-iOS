@@ -91,7 +91,7 @@
     [self createTemplates];
 }
 
-- (void)permuteStrokeOrders:(int)count {
+- (void)permuteStrokeOrders:(NSUInteger)count {
     if (count == 1) {
         [permutedStrokeOrders addObject: [strokeOrders copy]];
     } else {

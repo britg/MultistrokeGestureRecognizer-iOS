@@ -31,7 +31,7 @@
 
 - (void)createTemplates;
 - (void)createTemplatesFromJSONData:(NSData *)jsonData;
-- (void)permuteStrokeOrders:(int)count;
+- (void)permuteStrokeOrders:(NSUInteger)count;
 - (void)createUnistrokes;
 
 - (float)recognize:(WTMGlyphTemplate *)_template;
