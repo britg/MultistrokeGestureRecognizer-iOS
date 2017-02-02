@@ -34,7 +34,7 @@ NSArray* Resample(NSArray *points, int num) {
             newPoint = CGPointMake(x, y);
             newVal = [NSValue valueWithCGPoint:newPoint];
             [newPoints addObject:newVal];
-            workingPoints = Splice(workingPoints, newVal, i);
+            [workingPoints insertObject:newVal atIndex:i+1];
             D = 0.0;
         } else {
             D += d;
@@ -105,18 +105,6 @@ CGRect BoundingBox(NSArray *points) {
     }
     
     return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
-}
-
-NSMutableArray* Splice(NSMutableArray *original, id newVal, NSUInteger i) {
-    NSArray *frontSlice = [original subarrayWithRange:NSMakeRange(0, i)];
-    NSUInteger len = original.count-i;
-    NSArray *backSlice = [original subarrayWithRange:NSMakeRange(i, len)];
-    
-    NSMutableArray *spliced = [NSMutableArray arrayWithArray:frontSlice];
-    [spliced addObject:newVal];
-    [spliced addObjectsFromArray:backSlice];
-    
-    return spliced;
 }
 
 float PathLength(NSArray *points) {
